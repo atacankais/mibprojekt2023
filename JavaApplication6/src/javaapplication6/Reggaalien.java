@@ -14,7 +14,7 @@ import oru.inf.InfException;
  * @author jafar
  */
 public class Reggaalien extends javax.swing.JFrame {
-     public static InfDB db;
+     public static InfDB idb;
 
     /**
      * Creates new form Reggaalien
@@ -24,10 +24,19 @@ public class Reggaalien extends javax.swing.JFrame {
      *  fråga till lärare; 
      * varför får jag fel medelande när jag skapar konstrukter med db; 
      */
-    public Reggaalien(InfDB db) {
-        this.db=db;
+    public Reggaalien() {
+       
         initComponents();
+           try {
+           idb = new InfDB("mibdb", "3306", "mibdba", "mibkey");
+        } catch (InfException ex) {
+            
+        }
+        
+        
     }
+
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -183,10 +192,10 @@ public class Reggaalien extends javax.swing.JFrame {
              
              
              
-             String alienområde= db.fetchSingle("SELECT Plats_ID from Plats WHERE benamning = '" +område.getText() + "'");
+             String alienområde= idb.fetchSingle("SELECT Plats_ID from Plats WHERE benamning = '" +område.getText() + "'");
              
              
-          String denansvarigagenttillalien= db.fetchSingle("SELECT Agent_ID from Agent WHERE Namn = '" + ansvarigagent.getText() + "'");
+          String denansvarigagenttillalien= idb.fetchSingle("SELECT Agent_ID from Agent WHERE Namn = '" + ansvarigagent.getText() + "'");
           
           
           

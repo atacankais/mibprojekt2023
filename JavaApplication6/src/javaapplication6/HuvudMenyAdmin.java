@@ -4,19 +4,42 @@
  */
 package javaapplication6;
 
+import oru.inf.InfDB;
+import oru.inf.InfException;
+
 /**
  *
  * @author atacankais
  */
 public class HuvudMenyAdmin extends javax.swing.JFrame {
-
+ private InfDB idb;
     /**
      * Creates new form HuvudMenyAdmin
      */
     public HuvudMenyAdmin() {
+        
+        
         initComponents();
+        
+           try {
+           idb = new InfDB("mibdb", "3306", "mibdba", "mibkey");
+        } catch (InfException ex) {
+            
+        }
+        
+        
+        
     }
-
+    
+    public void oppnaalienreg(){
+Reggaalien r= new Reggaalien ();
+r.setVisible(true);
+        }
+public void oppnatabortalien(){
+    Deletealienfromsystemet da= new Deletealienfromsystemet();
+    da.setVisible(true);
+    
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,14 +68,29 @@ public class HuvudMenyAdmin extends javax.swing.JFrame {
         jLabel1.setText("Huvudmeny Admin");
 
         jButton1.setText("Registrera ny alien");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Ändra alieninformation");
 
         jButton3.setText("Ta bort alien");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Ta bort utrustning");
 
         jButton5.setText("Registrera ny agent");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("Sök agentinformation");
 
@@ -133,6 +171,23 @@ public class HuvudMenyAdmin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+         oppnaalienreg();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        oppnaalienreg();
+        
+        
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        oppnatabortalien();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments

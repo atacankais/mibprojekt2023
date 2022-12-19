@@ -69,7 +69,7 @@ public class main extends javax.swing.JFrame {
 
         user.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alien", "Agent" }));
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setText("Väljanvändare");
 
         LBagentID.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         LBagentID.setText("Namn:");
@@ -77,7 +77,7 @@ public class main extends javax.swing.JFrame {
         LBpassword.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         LBpassword.setText("Lösenord:");
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Login");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -181,8 +181,7 @@ public class main extends javax.swing.JFrame {
                 String lösenordalien = userpasscode.getText();
                 String användarnamnalien = username.getText();
 
-            String hamtaLosenord = ("SELECT Losenord from ALIEN where namn = '"+ användarnamnalien +"'");
-            String losenord = idb.fetchSingle(hamtaLosenord);
+            String losenord = idb.fetchSingle("SELECT Losenord from ALIEN where namn = '"+ användarnamnalien +"'");
 
             if (losenord.equals(lösenordalien)) {
               oppenmenyföralien();
