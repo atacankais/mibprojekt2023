@@ -15,7 +15,7 @@ import oru.inf.InfException;
  */
 public class Deletealienfromsystemet extends javax.swing.JFrame {
 
-     private static InfDB db;
+     private static InfDB idb;
     /**
      * Creates new form Deletealienfromsystemet
      */
@@ -25,7 +25,7 @@ public class Deletealienfromsystemet extends javax.swing.JFrame {
         
               
         try {
-            db = new InfDB("mibdb", "3306", "mibdba", "mibkey");
+            idb = new InfDB("mibdb", "3306", "mibdba", "mibkey");
         } catch (InfException ex) {
             
         }
@@ -114,19 +114,24 @@ public class Deletealienfromsystemet extends javax.swing.JFrame {
       
          try {
           String AlienNAMN= aliennamn.getText();     
-        
-        String Question= " SELECT * FROM ALIEN WHERE NAMN='"+aliennamn+"'";
+        Boolean delete=false; 
+     
          
-             String gettingthealienNAMN= db.fetchSingle(Question);
+            //String gettingthealienNAMN= idb.fetchSingle(" SELECT NAMN FROM ALIEN");
              
              
-             String deletealien= " DELETE FROM ALIEN WHERE NAMN= '"+aliennamn+"'";
-             String complatedelete=db.fetchSingle(deletealien);
-             System.out.println(" En alien har nu tagits bort från systemet"+ complatedelete);
+             String deletealien= " DELETE FROM ALIEN WHERE NAMN= '"+AlienNAMN+"'";
+            
+            delete=true;
+             if(delete=true ){
+                                   String complatedelete=idb.fetchSingle(deletealien);
+
+                 System.out.println(" En alien har nu tagits bort från systemet"+ complatedelete);
+             }
+             
          } catch (InfException ex) {
-             Logger.getLogger(Deletealienfromsystemet.class.getName()).log(Level.SEVERE, null, ex);
              
-             
+            
              System.out.println(" Något gick fel, vänligen försök igen");
          }
          

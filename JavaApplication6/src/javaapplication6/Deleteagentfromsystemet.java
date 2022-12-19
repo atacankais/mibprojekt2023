@@ -14,7 +14,7 @@ import oru.inf.InfException;
  * @author jafar
  */
 public class Deleteagentfromsystemet extends javax.swing.JFrame {
-private static InfDB db;
+private static InfDB idb;
     /**
      * Creates new form Deleteagentfromsystemet
      */
@@ -26,7 +26,7 @@ private static InfDB db;
         
               
         try {
-            db = new InfDB("mibdb", "3306", "mibdba", "mibkey");
+            idb = new InfDB("mibdb", "3306", "mibdba", "mibkey");
         } catch (InfException ex) {
             
         }
@@ -43,7 +43,7 @@ private static InfDB db;
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        agentnamn = new javax.swing.JTextField();
+        agentname = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -69,7 +69,7 @@ private static InfDB db;
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(agentnamn, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(agentname, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(145, 145, 145))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jButton1)
@@ -81,7 +81,7 @@ private static InfDB db;
                 .addGap(51, 51, 51)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(agentnamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(agentname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(jButton1)
                 .addContainerGap(115, Short.MAX_VALUE))
@@ -95,17 +95,21 @@ private static InfDB db;
         
         // här använder jag varaible name för att köra sql query , sayed
         
-        String name= ( " select Namn from agent"); 
+     //   String name= ( " select Namn from agent"); 
         
         
         
     try { 
-        db.fetchSingle(name);
-        if ( agentnamn.equals(name)){  // här kollar jag om namnet som  sql query hämtar är överens med namnet som skrivas i formen
-            // i ¨så fall tas bort agenten from systemet
-            db.delete("DELETE FROM Agent WHERE Namn = '" + name + "'"); 
-            System.out.println(" Ageneten med följande namn "+name+ "är nu borttagen."); 
-        }
+        String s= agentname.getText();
+        boolean deltete=false;
+        
+        
+            String delte=("DELETE FROM AGENT WHERE NAMN= '" + s + "'"); 
+            deltete=true;
+            if( deltete=true){
+          String i = idb.fetchSingle(delte);
+            System.out.println(" Ageneten är borttagit "); 
+            }
     } catch (InfException ex) {
         Logger.getLogger(Deleteagentfromsystemet.class.getName()).log(Level.SEVERE, null, ex);
         System.out.println(" Försök igen ");
@@ -152,7 +156,7 @@ private static InfDB db;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField agentnamn;
+    private javax.swing.JTextField agentname;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
