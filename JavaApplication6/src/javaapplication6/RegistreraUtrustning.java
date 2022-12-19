@@ -14,13 +14,17 @@ import oru.inf.InfException;
  * @author jafar
  */
 public class RegistreraUtrustning extends javax.swing.JFrame {
-      public static InfDB db;
+      public static InfDB idb;
 
     /**
      * Creates new form RegistreraUtrustning
      */
-    public RegistreraUtrustning(InfDB db) {
-        this.db=db;
+    public RegistreraUtrustning() {
+        try {
+           idb = new InfDB("mibdb", "3306", "mibdba", "mibkey");
+        } catch (InfException ex) {
+            
+        }
         initComponents();
     }
 
@@ -82,14 +86,16 @@ public class RegistreraUtrustning extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(118, 118, 118)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(367, 367, 367)
                         .addComponent(jLabel3))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(143, 143, 143)
                         .addComponent(jButton1)))
                 .addContainerGap(33, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(71, 71, 71))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,14 +126,15 @@ public class RegistreraUtrustning extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         String name= unamn.getText();
-        int id= Integer.parseInt(Utrutningsid.getText());  // typcasting //
+        String id= Utrutningsid.getText();
+       // int id= Integer.parseInt(Utrutningsid.getText());  // typcasting //
         String INsert= " INSERT INTO UTRUSTNING(Utrustnings_ID,Benamning) VALUES("
                 
-                + name+"','"
-                + id+")";
+                + id+"','"
+                + name+")";
         
           try {
-              db.fetchSingle(INsert);
+              idb.fetchSingle(INsert);
           } catch (InfException ex) {
               Logger.getLogger(RegistreraUtrustning.class.getName()).log(Level.SEVERE, null, ex);
               System.out.println("Försök igen");
@@ -174,7 +181,7 @@ public class RegistreraUtrustning extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-             //   new RegistreraUtrustning().setVisible(true);
+                new RegistreraUtrustning().setVisible(true);
             }
         });
     }
