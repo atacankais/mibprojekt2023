@@ -17,7 +17,7 @@ import oru.inf.InfException;
  * @author jafar
  */
 public class Ändralösenordföragenochalien extends javax.swing.JFrame {
-private static InfDB db;
+private static InfDB idb;
 
 
 
@@ -35,8 +35,15 @@ private static InfDB db;
      */
    
    // detta är konstruktor för klassen ändralösenordföragenochalien //
-    public Ändralösenordföragenochalien( InfDB db) {
-        this.db=db; 
+    public Ändralösenordföragenochalien( ) {
+      
+        
+        
+            try {
+           idb = new InfDB("mibdb", "3306", "mibdba", "mibkey");
+        } catch (InfException ex) {
+            
+        }
         initComponents();
         agentallpassword= new ArrayList<String> ();
         alienallpassword= new ArrayList<String> (); 
@@ -56,16 +63,16 @@ private static InfDB db;
     // jag användar den här methode för att hämta lösenorden och spara dem i arraylisten, därför skapade jag arraylisten 
     public void gettinglösenorden(){
      
-        String findagentpassword= "SELECT LOSENORD FROM AGENT;";
-         String findalienpassword= "SELECT LOSENORD FROM ALIEN;";
+      
          
     try { 
-        agentallpassword=db.fetchColumn(findagentpassword);
-        alienallpassword=db.fetchColumn(findalienpassword);
+        agentallpassword=idb.fetchColumn("SELECT LOSENORD FROM AGENT;");
+        alienallpassword=idb.fetchColumn("SELECT LOSENORD FROM ALIEN;");
         
     } catch (InfException ex) {
         Logger.getLogger(Ändralösenordföragenochalien.class.getName()).log(Level.SEVERE, null, ex);
         System.out.println(" Något gick fel när sytemet försökte hämta lösenorden");
+         
     }
         
     }
@@ -79,7 +86,7 @@ private static InfDB db;
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        Nylösenord = new javax.swing.JTextField();
+        Nyttlösenord = new javax.swing.JTextField();
         Gammallösenord = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
@@ -112,7 +119,7 @@ private static InfDB db;
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(Nylösenord, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
+                                .addComponent(Nyttlösenord, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
                                 .addComponent(Gammallösenord)))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(75, 75, 75)
@@ -130,7 +137,7 @@ private static InfDB db;
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Nylösenord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Nyttlösenord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Gammallösenord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -145,14 +152,12 @@ private static InfDB db;
 // här ska jag coda knappen för att ändra lösenorden 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String newpasscode= Nylösenord.getText();
+        String newpasscode= Nyttlösenord.getText();
         String oldpasscode= Gammallösenord.getText(); 
         
         // här uppdeteteras lösenorden för agent och alien om det gamla lösenordet stämmer rätt.
         
-        String uppdatepasscodeagent= "UPDATE agent SET losenord = " + "'" + newpasscode + "'" + " WHERE losenord = " + "'" + oldpasscode + "'";
-        String uppdatepasscodealien= "UPDATE alien SET losenord = " + "'" + newpasscode + "'" + " WHERE losenord = " + "'" + oldpasscode + "'";
-        
+    
         boolean findoldpasswordforagent=false; 
         boolean findoldpasswordforalien=false; 
                       
@@ -168,8 +173,9 @@ private static InfDB db;
               try {
              
              
-             db.update(uppdatepasscodeagent);
+             idb.update("UPDATE agent SET losenord = " + "'" + newpasscode + "'" + " WHERE losenord = " + "'" + oldpasscode + "'");
                            System.out.println(" Lösenordet har ändrats! ");
+                            JOptionPane.showMessageDialog(null, " Du har ändrat ditt lösenord och ditt nya lösenord är "+newpasscode);
                             } 
                             catch (InfException ettUndantag) {
                           
@@ -190,8 +196,9 @@ private static InfDB db;
               try {
              
              
-             db.update(uppdatepasscodealien);
+             idb.update("UPDATE alien SET losenord = " + "'" + newpasscode + "'" + " WHERE losenord = " + "'" + oldpasscode + "'");
                            System.out.println(" Lösenordet har ändrats!");
+                            JOptionPane.showMessageDialog(null, " Ditt nya lösenord är "+newpasscode);
                             } 
                             catch (InfException ettUndantag) {
                           
@@ -257,14 +264,14 @@ private static InfDB db;
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
            public void run() {
-           //  new Ändralösenordföragenochalien().setVisible(true);
+             new Ändralösenordföragenochalien().setVisible(true);
             }
        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Gammallösenord;
-    private javax.swing.JTextField Nylösenord;
+    private javax.swing.JTextField Nyttlösenord;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

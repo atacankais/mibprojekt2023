@@ -5,6 +5,7 @@
 package javaapplication6;
 
 import oru.inf.InfDB;
+import oru.inf.InfException;
 
 /**
  *
@@ -17,14 +18,25 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
      */
     public HuvudMenyAgent() {
         initComponents();
+        
+         try {
+           idb = new InfDB("mibdb", "3306", "mibdba", "mibkey");
+        } catch (InfException ex) {
+            
+        }
    
     }
-
-    HuvudMenyAgent(InfDB idb) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
     
+    
+    
+    
+       
+
+    public void oppenändralösnordmeny(){
+        
+        Ändralösenordföragenochalien k= new Ändralösenordföragenochalien();
+        k.setVisible(true);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -73,6 +85,11 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
         jLabel1.setText("Huvudmeny Agent");
 
         jButton9.setText("Ändra lösenord");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -130,6 +147,16 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        
+        
+        
+        
+        oppenändralösnordmeny(); // kallar metoden för att öppna rutan.
+        
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     /**
      * @param args the command line arguments
