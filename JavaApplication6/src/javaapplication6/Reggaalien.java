@@ -192,23 +192,25 @@ public class Reggaalien extends javax.swing.JFrame {
              
              
              
-             String alienområde= idb.fetchSingle("SELECT Plats_ID from Plats WHERE benamning = '" +område.getText() + "'");
+            String alienområde= idb.fetchSingle("SELECT Plats_ID from Plats WHERE benamning = '" +område.getText() + "'");
              
              
           String denansvarigagenttillalien= idb.fetchSingle("SELECT Agent_ID from Agent WHERE Namn = '" + ansvarigagent.getText() + "'");
           
           
-          
+          String s= denansvarigagenttillalien;
+          int d= Integer.parseInt(s);
           
            String INsert = "INSERT INTO alien (Alien_ID, Registreringsdatum,Losenord, Namn, Telefon, plats, Ansvarig_Agent) VALUES("
-             + alienid.getText() + ", '"
+             + d + ", '"
              + registerationdatum.getText() + "', '"
              + lösenordet.getText() + "', '"
              + aliennamn.getText() + " ','"
              + telefon.getText()+"','"
-             + alienområde +"','"
+             + alienområde+"','"
              + denansvarigagenttillalien +")";
             System.out.println(INsert);
+            idb.insert(INsert);
          } catch (InfException ex) {
              Logger.getLogger(Reggaalien.class.getName()).log(Level.SEVERE, null, ex);
              System.out.println(" Något gick fel");
@@ -250,7 +252,7 @@ public class Reggaalien extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-               // new Reggaalien().setVisible(true);
+                new Reggaalien().setVisible(true);
             }
         });
     }

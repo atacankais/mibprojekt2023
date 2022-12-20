@@ -31,6 +31,10 @@ public class main extends javax.swing.JFrame {
         
     }
 
+    main(InfDB idb) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
   
     
     public void oppenmeny(){
