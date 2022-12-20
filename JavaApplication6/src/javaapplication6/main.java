@@ -20,9 +20,6 @@ public class main extends javax.swing.JFrame {
     public main( ) {
         initComponents();
     
-        
-         
-         
           try {
            idb = new InfDB("mibdb", "3306", "mibdba", "mibkey");
         } catch (InfException ex) {
@@ -36,7 +33,6 @@ public class main extends javax.swing.JFrame {
     }
 
   
-    
     public void oppenmeny(){
         HuvudMenyAgent s= new HuvudMenyAgent();
         s.setVisible(true);
@@ -75,11 +71,6 @@ public class main extends javax.swing.JFrame {
         user.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         user.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Alien", "Agent" }));
         user.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        user.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userActionPerformed(evt);
-            }
-        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText("Användare");
@@ -166,18 +157,12 @@ public class main extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        
-        
-        
-     
-        
-        
-        
-         String chooseuser = user.getSelectedItem().toString();
+      
+        String chooseuser = user.getSelectedItem().toString();
         String lösenord = userpasscode.getText();
         String användarnamn = username.getText();
         
-           String test=  ("SELECT Losenord from AGENT where namn = '" + användarnamn + "'");
+        String test=  ("SELECT Losenord from AGENT where namn = '" + användarnamn + "'");
            System.out.println(test);
         
         if ( chooseuser=="Agent") {
@@ -209,7 +194,7 @@ public class main extends javax.swing.JFrame {
                 String lösenordalien = userpasscode.getText();
                 String användarnamnalien = username.getText();
 
-            String losenord = idb.fetchSingle("SELECT Losenord from ALIEN where namn = '"+ användarnamnalien +"'");
+                String losenord = idb.fetchSingle("SELECT Losenord from ALIEN where namn = '"+ användarnamnalien +"'");
 
             if (losenord.equals(lösenordalien)) {
               oppenmenyföralien();
@@ -223,41 +208,9 @@ public class main extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "försök igen ");
         }
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+           
         
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_userActionPerformed
 
     /**
      * @param args the command line arguments
