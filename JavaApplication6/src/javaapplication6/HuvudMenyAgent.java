@@ -68,6 +68,11 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
         });
 
         jButton2.setText("Ändra alieninformation");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Se alienlista område");
 
@@ -83,6 +88,11 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
         jButton6.setText("Sök alieninformation");
 
         jButton7.setText("Registrera ny utrustning");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jButton8.setText("Sök områdeschef för område");
 
@@ -165,6 +175,17 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
         Reggaalien R = new Reggaalien();
         R.setVisible(true);
     }
+    public void uppdatealien(){
+        AdminÄndraAllAlienInfo alienn = new AdminÄndraAllAlienInfo();
+        alienn.setVisible(true);
+    }
+    
+    public void reggautrutning(){
+        ReggaUtrustning u= new ReggaUtrustning();
+        u.setVisible(true);
+    }
+    
+    
     
     private void nyalienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nyalienActionPerformed
         reggaNyAlien();
@@ -183,6 +204,23 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
        datumIntervaller();
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+        
+        
+        uppdatealien();
+        
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        reggautrutning();
+        
+        
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     
     /**

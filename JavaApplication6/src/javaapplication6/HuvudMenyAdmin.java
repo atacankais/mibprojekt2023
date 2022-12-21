@@ -70,6 +70,10 @@ public void tilldelaAdminStatus() {
     TilldelaAdminStatus s = new TilldelaAdminStatus();
     s.setVisible(true);
 }
+public void tabortagent(){
+    Deleteagentfromsystemet system= new Deleteagentfromsystemet();
+    system.setVisible(true);
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -298,6 +302,9 @@ public void tilldelaAdminStatus() {
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
+        
+        tabortagent();
+        
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
