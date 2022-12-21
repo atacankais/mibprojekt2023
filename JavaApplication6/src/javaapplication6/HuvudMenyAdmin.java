@@ -60,6 +60,16 @@ public void adminÄndraOmrådesChef() {
     ÄndraOmrådesChef a = new ÄndraOmrådesChef();
     a.setVisible(true);
 }
+
+public void adminÄndraKontorsChef() {
+    ÄndraKontorsChef k = new ÄndraKontorsChef();
+    k.setVisible(true);
+}
+
+public void tilldelaAdminStatus() {
+    TilldelaAdminStatus s = new TilldelaAdminStatus();
+    s.setVisible(true);
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -283,7 +293,7 @@ public void adminÄndraOmrådesChef() {
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void andraalieninfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_andraalieninfoActionPerformed
-        adminÄndraAllAlienInfo();
+        adminÄndraAllAlienInfo(); //KLAR
     }//GEN-LAST:event_andraalieninfoActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
@@ -303,11 +313,11 @@ public void adminÄndraOmrådesChef() {
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
+        adminÄndraKontorsChef();
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+        tilldelaAdminStatus();
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
