@@ -167,10 +167,7 @@ public class main extends javax.swing.JFrame {
         
         if ( chooseuser=="Agent") {
             try {
-             
                 String losenord= idb.fetchSingle(("SELECT Losenord from AGENT where namn = '" + användarnamn + "'"));
-
-              
                 String adminstate= idb.fetchSingle(("Select Administrator from Agent where namn = '" + användarnamn + "'"));
 
                     if (losenord.equals(lösenord) && adminstate.equals("N")) {
@@ -183,7 +180,12 @@ public class main extends javax.swing.JFrame {
                     System.out.println("admin är inlogat ");
                             this.dispose();
                 }
-                        } catch (InfException ettUndantag) {
+                
+                    else {
+                             JOptionPane.showMessageDialog(null, "Fel lösenord");
+
+                    }
+                        } catch (InfException ettUndantag) { //Funkar inte? om man slår in fel användarnamn ska de komma popup
                                 JOptionPane.showMessageDialog(null, " fel lösnord and namn");
                                 System.out.println("try again ");
                         }
@@ -204,12 +206,10 @@ public class main extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "fel lösenord");
 
             }
-            } catch (InfException ettUndantag) {
+            } catch (InfException ettUndantag) { //Funkar inte? om man slår in fel användarnamn ska de komma popup
             JOptionPane.showMessageDialog(null, "försök igen ");
         }
-        }
-           
-        
+        }   
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
