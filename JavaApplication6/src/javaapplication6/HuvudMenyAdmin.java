@@ -56,6 +56,10 @@ public void adminÄndraAllAlienInfo(){
     n.setVisible(true);
     dispose();
 }
+public void adminÄndraOmrådesChef() {
+    ÄndraOmrådesChef a = new ÄndraOmrådesChef();
+    a.setVisible(true);
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -259,32 +263,23 @@ public void adminÄndraAllAlienInfo(){
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
          oppnaalienreg();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
         oppnaalienreg();
-        
-        
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
         oppnatabortalien();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
-        oppenändralösnordmenyföradmin(); // kallar metoden för att öppan ändralösenord rutan för admin 
-        
+        oppenändralösnordmenyföradmin(); // kallar metoden för att öppan ändralösenord rutan för admin    
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        // TODO add your handling code here:
-        
-      loggoutmeny();
+        loggoutmeny();
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void andraalieninfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_andraalieninfoActionPerformed
@@ -304,7 +299,7 @@ public void adminÄndraAllAlienInfo(){
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
+        adminÄndraOmrådesChef();
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
