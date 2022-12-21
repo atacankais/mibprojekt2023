@@ -23,8 +23,25 @@ public class Reggaalien extends javax.swing.JFrame {
      * 
      *  fråga till lärare; 
      * varför får jag fel medelande när jag skapar konstrukter med db; 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
+     * 
      */
-    public Reggaalien() {
+   
+     
+          
+        
+     
+     
+     
+     
+     public Reggaalien() {
        
         initComponents();
            try {
@@ -32,9 +49,20 @@ public class Reggaalien extends javax.swing.JFrame {
         } catch (InfException ex) {
             
         }
-        
-        
     }
+     
+     
+        public String getnexgtalien(){
+               String NexTid=""; 
+               try{
+                   NexTid=idb.getAutoIncrement("alien","Alien_ID");
+               }
+               catch (InfException ex){
+                   System.out.println("HH");
+                   
+               }
+               return NexTid;
+           }
 
     
 
@@ -192,22 +220,22 @@ public class Reggaalien extends javax.swing.JFrame {
              
              
              
-            String alienområde= idb.fetchSingle("SELECT Plats_ID from Plats WHERE benamning = '" +område.getText() + "'");
+            String alienområde= idb.fetchSingle("SELECT Plats_ID from Plats WHERE Plats_ID = '" +område.getText() + "'");
              
              
-          String denansvarigagenttillalien= idb.fetchSingle("SELECT Agent_ID from Agent WHERE Namn = '" + ansvarigagent.getText() + "'");
+          String denansvarigagenttillalien= idb.fetchSingle("SELECT Agent_ID from Agent WHERE Agent_ID = '" + ansvarigagent.getText() + "'");
           
           
-          String s= denansvarigagenttillalien;
-          int d= Integer.parseInt(s);
+         String s= denansvarigagenttillalien;
+       //   int d= Integer.parseInt(s);
           
            String INsert = "INSERT INTO alien (Alien_ID, Registreringsdatum,Losenord, Namn, Telefon, plats, Ansvarig_Agent) VALUES("
-             + d + ", '"
+             + getnexgtalien() + ", '"
              + registerationdatum.getText() + "', '"
              + lösenordet.getText() + "', '"
              + aliennamn.getText() + " ','"
-             + telefon.getText()+"','"
-             + alienområde+"','"
+             + telefon.getText()+"',"
+             + alienområde+","
              + denansvarigagenttillalien +")";
             System.out.println(INsert);
             idb.insert(INsert);

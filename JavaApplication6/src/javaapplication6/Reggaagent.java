@@ -6,6 +6,7 @@ package javaapplication6;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static javaapplication6.Reggaalien.idb;
 import oru.inf.InfDB;
 import oru.inf.InfException;
 
@@ -18,24 +19,40 @@ public class Reggaagent extends javax.swing.JFrame {
     /**
      * Creates new form Reggaagent
      */
-    public Reggaagent( InfDB db) {
+    public Reggaagent( ) {
         initComponents();
-               this.db=db;
+             
 
         
-         //try {
-       //     db = new InfDB("mibdb", "3306", "mibdba", "mibkey");
-       // } catch (InfException ex) {
+         try {
+           db = new InfDB("mibdb", "3306", "mibdba", "mibkey");
+       } catch (InfException ex) {
             
-       // }
+       }
         
         
-        
-        
-        
-        
+       
     }
 
+     public String getagetnid(){
+               String agentid=""; 
+               try{
+                   agentid=db.getAutoIncrement("agent","Agent_ID");
+               }
+               catch (InfException ex){
+                   System.out.println("HH");
+                   
+               }
+               return agentid;
+           }
+    
+    
+    
+    
+    
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -175,59 +192,72 @@ public class Reggaagent extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-     // TODO add your handling code here:
-     
-      // här registerar jag en agent i databasen med hjälp av insert och använder en variable som kallas för 
-     // INsert för att spara värden i. 
-     String INsert = "INSERT INTO Agent (Agent_ID, Namn, Telefon, Anstallningsdatum, Administrator, Losenord, Omrade) VALUES("
-             + Agentid.getText() + ", '"
-             + agentnamn.getText() + "', '"
-             + telefon.getText() + "', '"
-             + anställningsdatum.getText() + "', '"
-             +  admin.getText() + " ','"
-             + lösenord.getText()+"','"
-             + område.getText()+")";
-        
-        
-     String administratör = "UPDATE Agent SET Administrator='J' WHERE Namn='" + agentnamn.getText() + "'";
-     
-     //  Här använder jag en varaible som string för att uppdetera till adminstratör om användaren skriver "J" 
-      String Notadmin = "UPDATE Agent SET Administrator='N' WHERE Namn='" + agentnamn.getText() + "'";
-      // Här använder jag String för at uppderar agenten om användaren skriver "N" vilket innebär att agent kommer inte 
-      // registeras som admin 
-     if ( admin.getText().equals("J")){  // här använder jag if statemetn och kollar om användare skriver "J" 
-         // DÅ blir agenten administratör direkt 
-         try {
-             db.fetchSingle(INsert);
-              db.fetchSingle(administratör);
-              System.out.println(" Agenten är nu admin");
-         } catch (InfException ex) {
-             Logger.getLogger(Reggaagent.class.getName()).log(Level.SEVERE, null, ex);
-             System.out.println(" Något gick fel ");
-         }
-         if ( admin.getSelectedText().equals("N")) {
-             
-             // om end-user skriver "N" då agent kommer inte vara adminstratör 
-             
-             try {
-                 db.fetchSingle(INsert);
-                 db.fetchSingle(Notadmin);
-                 System.out.println("En ny agent som inte varit admin tidigare är nu regitererad i systemet");
-             } catch (InfException ex) {
-                 Logger.getLogger(Reggaagent.class.getName()).log(Level.SEVERE, null, ex);
-                 System.out.println("Något gick fel, försök igen");
-             }
-             
-                 
-                 }
+    
+         // TODO add your handling code here:
          
+         // här registerar jag en agent i databasen med hjälp av insert och använder en variable som kallas för
+         // INsert för att spara värden i.
+         
+
+                 
+                 
+               // String h = idb.fetchSingle("SELECT Omrades_ID from omrade WHERE Omrades_ID = '" +område.getText() + "'");
+         String INsert = "INSERT INTO Agent (Agent_ID, Namn, Telefon, Anstallningsdatum, Administrator, Losenord, Omrade) VALUES("
+                 + getagetnid()+ ", '"
+                 + agentnamn.getText() + "', '"
+                 + telefon.getText() + "', '"
+                 + anställningsdatum.getText() + "', '"
+                 + admin.getText() + " ','"
+                 + lösenord.getText()+"',"
+                 +område.getText() +")";
+     try {
+         db.insert(INsert);
          
      }
-        
-        
-        
-        
-        
+     catch (InfException ex) {
+                 Logger.getLogger(Reggaagent.class.getName()).log(Level.SEVERE, null, ex);
+                 System.out.println(" Något gick fel ");
+             }
+         /*     String administratör = "UPDATE Agent SET Administrator='J' WHERE Namn='" + agentnamn.getText() + "'";
+         
+         //  Här använder jag en varaible som string för att uppdetera till adminstratör om användaren skriver "J"
+         String Notadmin = "UPDATE Agent SET Administrator='N' WHERE Namn='" + agentnamn.getText() + "'";
+         // Här använder jag String för at uppderar agenten om användaren skriver "N" vilket innebär att agent kommer inte
+         // registeras som admin
+         if ( admin.getText().equalsIgnoreCase("J")){  // här använder jag if statemetn och kollar om användare skriver "J"
+         // DÅ blir agenten administratör direkt
+         try {
+         db.fetchSingle(INsert);
+         db.fetchSingle(administratör);
+         System.out.println(" Agenten är nu admin");
+         } catch (InfException ex) {
+         Logger.getLogger(Reggaagent.class.getName()).log(Level.SEVERE, null, ex);
+         System.out.println(" Något gick fel ");
+         }
+         if ( admin.getSelectedText().equalsIgnoreCase("N")) {
+         
+         // om end-user skriver "N" då agent kommer inte vara adminstratör
+         
+         try {
+         db.fetchSingle(INsert);
+         db.fetchSingle(Notadmin);
+         System.out.println("En ny agent som inte varit admin tidigare är nu regitererad i systemet");
+         } catch (InfException ex) {
+         Logger.getLogger(Reggaagent.class.getName()).log(Level.SEVERE, null, ex);
+         System.out.println("Något gick fel, försök igen");
+         }
+         
+         
+         }
+         
+         
+         }
+         
+         
+         
+         
+         */
+    
         
         
         
@@ -264,7 +294,7 @@ public class Reggaagent extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-            //    new Reggaagent().setVisible(true);
+               new Reggaagent().setVisible(true);
             }
         });
     }

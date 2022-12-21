@@ -125,19 +125,30 @@ public class RegistreraUtrustning extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
-        String name= unamn.getText();
-        String id= Utrutningsid.getText();
-       // int id= Integer.parseInt(Utrutningsid.getText());  // typcasting //
-        String INsert= " INSERT INTO UTRUSTNING(Utrustnings_ID,Benamning) VALUES("
+      //  String name= unamn.getText();
+        // String sqlQueryTyp = "";
+     //   String id= Utrutningsid.getText();
+     //   int idd= Integer.parseInt(id);  // typcasting //
+       // String INsert = " INSERT INTO UTRUSTNING(Utrustnings_ID,Benamning) VALUES("
                 
-                + id+"','"
-                + name+")";
+         //       + idd+"','"
+         //       + name+")"; 
         
           try {
-              idb.fetchSingle(INsert);
+         // String sql= " INSERT INTO UTRUSTNING VALUES( idd,name)";   
+        
+      
+                  //  idb.insert(sql);
+                    
+                  //  idb.insert(sql);
+                    
+   String  sqlQueryTyp = "insert into Utrustning (Utrustnings_ID,Benamning)VALUES(" + Utrutningsid.getText() +  "', '" + unamn.getText() + ")";
+             
+                idb.insert(sqlQueryTyp);
+                    
+                    
           } catch (InfException ex) {
               Logger.getLogger(RegistreraUtrustning.class.getName()).log(Level.SEVERE, null, ex);
-              System.out.println("Försök igen");
           }
         
         

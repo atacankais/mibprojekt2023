@@ -14,13 +14,19 @@ import oru.inf.InfException;
  * @author jafar
  */
 public class Changeagentinformation extends javax.swing.JFrame {
-  private static InfDB db;
+  private static InfDB Idb;
     /**
      * Creates new form Changeagentinformation
      */
-    public Changeagentinformation( InfDB db) {
-        this.db=db; 
-        initComponents();
+    public Changeagentinformation( ) {
+        
+        
+         try {
+           Idb = new InfDB("mibdb", "3306", "mibdba", "mibkey");
+       } catch (InfException ex) {
+            
+       }
+        
     }
 
     /**
@@ -142,12 +148,12 @@ public class Changeagentinformation extends javax.swing.JFrame {
         // Här använder jag Try to och catch för att få fel medelande ifall något gör dåligt //
         
       try { 
-          valjaagent= db.fetchSingle(" Select * from agent where Namn='" + valjaagent +  "'"); // här använder jag Select för att hämta 
+          valjaagent= Idb.fetchSingle(" Select * from agent where Namn='" + valjaagent +  "'"); // här använder jag Select för att hämta 
          // namnet på agenten//
 
-          name= db.fetchSingle("UPDATE Agent SET Namn ='" + name +"'"); // här användas Update för att uppdetera info om agent//
-            området= db.fetchSingle("UPDATE Agent SET Omrade ='" + området +"'");
-              TELNO= db.fetchSingle("UPDATE Agent SET Telefon='" + TELNO+"'");
+         Idb.update("UPDATE Agent SET Namn ='" + name +"' AND omrade='" + området +"'+ AND  Telefon='" + TELNO+"'  + where Namn='" + valjaagent+ "'");
+     
+            
              
           
       } catch (InfException ex) {
@@ -218,7 +224,7 @@ public class Changeagentinformation extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //new Changeagentinformation().setVisible(true);
+                new Changeagentinformation().setVisible(true);
             }
         });
     }
