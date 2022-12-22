@@ -31,6 +31,12 @@ public class HuvudMenyAdmin extends javax.swing.JFrame {
         
     }
     
+    public void ändraAgentInfo()
+    {
+        ÄndraAgentInformation k = new ÄndraAgentInformation();
+        k.setVisible(true);
+    }
+    
     public void oppnaalienreg(){
 Reggaalien r= new Reggaalien ();
 r.setVisible(true);
@@ -312,7 +318,7 @@ public void tabortagent(){
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
+       ändraAgentInfo();
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
