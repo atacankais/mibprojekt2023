@@ -12,74 +12,68 @@ import oru.inf.InfException;
  * @author atacankais
  */
 public class HuvudMenyAdmin extends javax.swing.JFrame {
- private InfDB idb;
+private InfDB idb;
     /**
      * Creates new form HuvudMenyAdmin
      */
-    public HuvudMenyAdmin() {
-        
-        
+    public HuvudMenyAdmin() {  
         initComponents();
         
            try {
            idb = new InfDB("mibdb", "3306", "mibdba", "mibkey");
         } catch (InfException ex) {
             
-        }
-        
-        
-        
+        } 
     }
     
-    public void ändraAgentInfo()
+    public void ändraAgentInfo() //KLAR
     {
         ÄndraAgentInformation k = new ÄndraAgentInformation();
         k.setVisible(true);
     }
     
     public void oppnaalienreg(){
-Reggaalien r= new Reggaalien ();
-r.setVisible(true);
+        Reggaalien r= new Reggaalien ();
+        r.setVisible(true);
         }
-public void oppnatabortalien(){
-    Deletealienfromsystemet da= new Deletealienfromsystemet();
-    da.setVisible(true);
+    public void oppnatabortalien(){
+        Deletealienfromsystemet da= new Deletealienfromsystemet();
+        da.setVisible(true);
     }
     public void oppenändralösnordmenyföradmin(){
-        
         Ändralösenordföragenochalien l= new Ändralösenordföragenochalien();
         l.setVisible(true);
     }
     
-public void loggoutmeny(){
-    main m= new main();
-      m.setVisible(true);
+    public void loggoutmeny(){
+        main m= new main();
+        m.setVisible(true);
         dispose();
-}
+    }
 
-public void adminÄndraAllAlienInfo(){
-    AdminÄndraAllAlienInfo n = new AdminÄndraAllAlienInfo();
-    n.setVisible(true);
-    dispose();
-}
-public void adminÄndraOmrådesChef() {
-    ÄndraOmrådesChef a = new ÄndraOmrådesChef();
-    a.setVisible(true);
-}
+    public void adminÄndraAllAlienInfo(){ //KLAR
+        AdminÄndraAllAlienInfo n = new AdminÄndraAllAlienInfo();
+        n.setVisible(true);
+        dispose();
+    }
+    public void adminÄndraOmrådesChef() {
+        ÄndraOmrådesChef a = new ÄndraOmrådesChef();
+        a.setVisible(true);
+    }
 
-public void adminÄndraKontorsChef() {
-    ÄndraKontorsChef k = new ÄndraKontorsChef();
-    k.setVisible(true);
-}
+    public void adminÄndraKontorsChef() {
+        ÄndraKontorsChef k = new ÄndraKontorsChef();
+        k.setVisible(true);
+    }
 
-public void tilldelaAdminStatus() {
-    TilldelaAdminStatus s = new TilldelaAdminStatus();
-    s.setVisible(true);
-}
-public void tabortagent(){
-    Deleteagentfromsystemet system= new Deleteagentfromsystemet();
-    system.setVisible(true);
-}
+    public void tilldelaAdminStatus() {
+        TilldelaAdminStatus s = new TilldelaAdminStatus();
+        s.setVisible(true);
+    }
+    public void tabortagent(){
+        Deleteagentfromsystemet system= new Deleteagentfromsystemet();
+        system.setVisible(true);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -307,10 +301,7 @@ public void tabortagent(){
     }//GEN-LAST:event_andraalieninfoActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-        
-        tabortagent();
-        
+       tabortagent();  
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -318,7 +309,7 @@ public void tabortagent(){
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-       ändraAgentInfo();
+       ändraAgentInfo(); //KLAR
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
