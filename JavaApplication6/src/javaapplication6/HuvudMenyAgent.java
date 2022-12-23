@@ -50,7 +50,6 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
         nyalien = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
@@ -75,8 +74,11 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
         });
 
         jButton3.setText("Se alienlista område");
-
-        jButton4.setText("Se alienlista ras");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("Se alien registration inom ett datumintervall");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -130,7 +132,6 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
                     .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(nyalien, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,10 +161,8 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton6)
-                    .addComponent(jButton4))
-                .addGap(18, 18, 18)
-                .addComponent(jButton5)
-                .addContainerGap(65, Short.MAX_VALUE))
+                    .addComponent(jButton5))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
 
         pack();
@@ -191,8 +190,25 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
     }
     
     public void reggautrutning(){
-        ReggaUtrustning u= new ReggaUtrustning();
+        RegistreraUtrustning u= new RegistreraUtrustning();
         u.setVisible(true);
+    }
+    
+    public void SökAlienInfo(){
+        SökAlienInfo s = new SökAlienInfo();
+        s.setVisible(true);
+      
+    }
+    
+    public void SökOmrådesChefAgent(){
+        SökOmrådesChefAgent c = new SökOmrådesChefAgent();
+        c.setVisible(true);
+    }
+    
+    public void SeAlienListaOmrådeFörAgent(){
+        SeAlienListaOmrådeFörAgent LO = new SeAlienListaOmrådeFörAgent();
+        LO.setVisible(true);
+
     }
     
     
@@ -202,10 +218,7 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
     }//GEN-LAST:event_nyalienActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-        
-        
-        
+
         
         oppenändralösnordmeny(); // kallar metoden för att öppna rutan.
         
@@ -233,12 +246,16 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+      SökAlienInfo();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
+    SökOmrådesChefAgent();
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+              SeAlienListaOmrådeFörAgent();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     
     /**
@@ -280,7 +297,6 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
