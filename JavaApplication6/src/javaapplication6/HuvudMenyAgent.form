@@ -119,6 +119,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="S&#xf6;k alieninformation"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton7">
       <Properties>
@@ -132,6 +135,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="S&#xf6;k omr&#xe5;deschef f&#xf6;r omr&#xe5;de"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton8ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>

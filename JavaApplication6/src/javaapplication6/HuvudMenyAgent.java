@@ -86,6 +86,11 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
         });
 
         jButton6.setText("Sök alieninformation");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setText("Registrera ny utrustning");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -95,6 +100,11 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
         });
 
         jButton8.setText("Sök områdeschef för område");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
         jLabel1.setText("Huvudmeny Agent");
@@ -221,6 +231,14 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
 
     
     /**

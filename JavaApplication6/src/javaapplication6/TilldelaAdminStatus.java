@@ -38,7 +38,7 @@ private static InfDB idb;
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         agnamn = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        Tilldela = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,10 +49,10 @@ private static InfDB idb;
 
         agnamn.setForeground(new java.awt.Color(153, 153, 153));
 
-        jButton1.setText("Tilldela");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Tilldela.setText("Tilldela");
+        Tilldela.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                TilldelaActionPerformed(evt);
             }
         });
 
@@ -73,7 +73,7 @@ private static InfDB idb;
                 .addGap(0, 66, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(Tilldela)
                 .addGap(142, 142, 142))
         );
         layout.setVerticalGroup(
@@ -86,14 +86,14 @@ private static InfDB idb;
                     .addComponent(agnamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(Tilldela)
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void TilldelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TilldelaActionPerformed
         String agentnamn = agnamn.getText();
         
         try{
@@ -106,7 +106,7 @@ private static InfDB idb;
            System.out.println("Nånting gick fel");
         }
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_TilldelaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,8 +144,8 @@ private static InfDB idb;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Tilldela;
     private javax.swing.JTextField agnamn;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
