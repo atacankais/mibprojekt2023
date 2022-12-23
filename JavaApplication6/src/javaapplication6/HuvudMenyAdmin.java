@@ -88,116 +88,116 @@ private InfDB idb;
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        andraalieninfo = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
+        RegAlien = new javax.swing.JButton();
+        ÄndraAlienInfo = new javax.swing.JButton();
+        RaderaAlien = new javax.swing.JButton();
+        RaderaUtru = new javax.swing.JButton();
+        RegAgent = new javax.swing.JButton();
+        SökAgentInfo = new javax.swing.JButton();
+        GeAdminTillAgent = new javax.swing.JButton();
+        ÄndraAgentInfo = new javax.swing.JButton();
+        RaderaAgent = new javax.swing.JButton();
+        ÄndraOmrChef = new javax.swing.JButton();
+        ÄndraKonChef = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
+        ÄndraLösen = new javax.swing.JButton();
+        LoggaUt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
         jLabel1.setText("Huvudmeny Admin");
 
-        jButton1.setText("Registrera ny alien");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        RegAlien.setText("Registrera ny alien");
+        RegAlien.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                RegAlienActionPerformed(evt);
             }
         });
 
-        andraalieninfo.setText("Ändra alieninformation");
-        andraalieninfo.addActionListener(new java.awt.event.ActionListener() {
+        ÄndraAlienInfo.setText("Ändra alieninformation");
+        ÄndraAlienInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                andraalieninfoActionPerformed(evt);
+                ÄndraAlienInfoActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Ta bort alien");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        RaderaAlien.setText("Ta bort alien");
+        RaderaAlien.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                RaderaAlienActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Ta bort utrustning");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        RaderaUtru.setText("Ta bort utrustning");
+        RaderaUtru.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                RaderaUtruActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Registrera ny agent");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        RegAgent.setText("Registrera ny agent");
+        RegAgent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                RegAgentActionPerformed(evt);
             }
         });
 
-        jButton6.setText("Sök agentinformation");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        SökAgentInfo.setText("Sök agentinformation");
+        SökAgentInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                SökAgentInfoActionPerformed(evt);
             }
         });
 
-        jButton7.setText("Tilldela administratörsstatus till agent");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        GeAdminTillAgent.setText("Tilldela administratörsstatus till agent");
+        GeAdminTillAgent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                GeAdminTillAgentActionPerformed(evt);
             }
         });
 
-        jButton8.setText("Ändra agentinformation");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        ÄndraAgentInfo.setText("Ändra agentinformation");
+        ÄndraAgentInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                ÄndraAgentInfoActionPerformed(evt);
             }
         });
 
-        jButton9.setText("Ta bort agent");
-        jButton9.addActionListener(new java.awt.event.ActionListener() {
+        RaderaAgent.setText("Ta bort agent");
+        RaderaAgent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton9ActionPerformed(evt);
+                RaderaAgentActionPerformed(evt);
             }
         });
 
-        jButton10.setText("Ändra områdeschef");
-        jButton10.addActionListener(new java.awt.event.ActionListener() {
+        ÄndraOmrChef.setText("Ändra områdeschef");
+        ÄndraOmrChef.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton10ActionPerformed(evt);
+                ÄndraOmrChefActionPerformed(evt);
             }
         });
 
-        jButton11.setText("Ändra kontorschef");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
+        ÄndraKonChef.setText("Ändra kontorschef");
+        ÄndraKonChef.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
+                ÄndraKonChefActionPerformed(evt);
             }
         });
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/javaapplication6/admin.png"))); // NOI18N
 
-        jButton12.setText("Ändra Lösenord");
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
+        ÄndraLösen.setText("Ändra Lösenord");
+        ÄndraLösen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
+                ÄndraLösenActionPerformed(evt);
             }
         });
 
-        jButton13.setText("Logout");
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
+        LoggaUt.setText("Logout");
+        LoggaUt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
+                LoggaUtActionPerformed(evt);
             }
         });
 
@@ -216,25 +216,25 @@ private InfDB idb;
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(15, 15, 15)
                                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(andraalieninfo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(RaderaAlien, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ÄndraAlienInfo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(RegAlien, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(54, 54, 54)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(RaderaAgent, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(ÄndraAgentInfo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(ÄndraOmrChef, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(ÄndraKonChef, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(RaderaUtru, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(GeAdminTillAgent, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(SökAgentInfo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(RegAgent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(ÄndraLösen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton13)
+                                .addComponent(LoggaUt)
                                 .addGap(86, 86, 86)))))
                 .addContainerGap())
         );
@@ -245,92 +245,92 @@ private InfDB idb;
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton5))
+                    .addComponent(RegAlien)
+                    .addComponent(RegAgent))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton9))
+                    .addComponent(RaderaAlien)
+                    .addComponent(RaderaAgent))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(andraalieninfo)
-                    .addComponent(jButton6))
+                    .addComponent(ÄndraAlienInfo)
+                    .addComponent(SökAgentInfo))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
                         .addContainerGap(19, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton8)
+                        .addComponent(ÄndraAgentInfo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton10)
+                        .addComponent(ÄndraOmrChef)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton11)
+                        .addComponent(ÄndraKonChef)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(GeAdminTillAgent, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton4)
+                        .addComponent(RaderaUtru)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton12)
+                        .addComponent(ÄndraLösen)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton13)
+                        .addComponent(LoggaUt)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void RegAlienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegAlienActionPerformed
          oppnaalienreg();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_RegAlienActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void RegAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegAgentActionPerformed
         oppnaalienreg();
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_RegAgentActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void RaderaAlienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RaderaAlienActionPerformed
         oppnatabortalien();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_RaderaAlienActionPerformed
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+    private void ÄndraLösenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ÄndraLösenActionPerformed
         oppenändralösnordmenyföradmin(); // kallar metoden för att öppan ändralösenord rutan för admin    
-    }//GEN-LAST:event_jButton12ActionPerformed
+    }//GEN-LAST:event_ÄndraLösenActionPerformed
 
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+    private void LoggaUtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoggaUtActionPerformed
         loggoutmeny();
-    }//GEN-LAST:event_jButton13ActionPerformed
+    }//GEN-LAST:event_LoggaUtActionPerformed
 
-    private void andraalieninfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_andraalieninfoActionPerformed
+    private void ÄndraAlienInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ÄndraAlienInfoActionPerformed
         adminÄndraAllAlienInfo(); //KLAR
-    }//GEN-LAST:event_andraalieninfoActionPerformed
+    }//GEN-LAST:event_ÄndraAlienInfoActionPerformed
 
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+    private void RaderaAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RaderaAgentActionPerformed
        tabortagent();  
-    }//GEN-LAST:event_jButton9ActionPerformed
+    }//GEN-LAST:event_RaderaAgentActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void SökAgentInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SökAgentInfoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_SökAgentInfoActionPerformed
 
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+    private void ÄndraAgentInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ÄndraAgentInfoActionPerformed
        ändraAgentInfo(); //KLAR
-    }//GEN-LAST:event_jButton8ActionPerformed
+    }//GEN-LAST:event_ÄndraAgentInfoActionPerformed
 
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+    private void ÄndraOmrChefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ÄndraOmrChefActionPerformed
         adminÄndraOmrådesChef(); //KLAR
-    }//GEN-LAST:event_jButton10ActionPerformed
+    }//GEN-LAST:event_ÄndraOmrChefActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+    private void ÄndraKonChefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ÄndraKonChefActionPerformed
         adminÄndraKontorsChef(); //KLAR
-    }//GEN-LAST:event_jButton11ActionPerformed
+    }//GEN-LAST:event_ÄndraKonChefActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void GeAdminTillAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeAdminTillAgentActionPerformed
         tilldelaAdminStatus();
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_GeAdminTillAgentActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void RaderaUtruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RaderaUtruActionPerformed
     taBortUtrustning(); //KLAR
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_RaderaUtruActionPerformed
 
     /**
      * @param args the command line arguments
@@ -369,20 +369,20 @@ private InfDB idb;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton andraalieninfo;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton GeAdminTillAgent;
+    private javax.swing.JButton LoggaUt;
+    private javax.swing.JButton RaderaAgent;
+    private javax.swing.JButton RaderaAlien;
+    private javax.swing.JButton RaderaUtru;
+    private javax.swing.JButton RegAgent;
+    private javax.swing.JButton RegAlien;
+    private javax.swing.JButton SökAgentInfo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton ÄndraAgentInfo;
+    private javax.swing.JButton ÄndraAlienInfo;
+    private javax.swing.JButton ÄndraKonChef;
+    private javax.swing.JButton ÄndraLösen;
+    private javax.swing.JButton ÄndraOmrChef;
     // End of variables declaration//GEN-END:variables
 }
