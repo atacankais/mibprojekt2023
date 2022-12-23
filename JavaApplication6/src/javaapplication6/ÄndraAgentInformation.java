@@ -4,6 +4,7 @@
  */
 package javaapplication6;
 
+import javax.swing.JOptionPane;
 import oru.inf.InfDB;
 import oru.inf.InfException;
 
@@ -155,6 +156,7 @@ public class ÄndraAgentInformation extends javax.swing.JFrame {
         }
 
         catch(InfException e) {
+            JOptionPane.showMessageDialog(null, "Nånting gick fel");   
             System.out.println("Nånting gick fel");
         }
     }//GEN-LAST:event_ändraActionPerformed

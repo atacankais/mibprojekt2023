@@ -26,6 +26,10 @@ private InfDB idb;
         } 
     }
     
+    public void taBortUtrustning() { //KLAR
+        TaBortUtrustning k = new TaBortUtrustning();
+        k.setVisible(true);
+    }
     public void ändraAgentInfo() //KLAR
     {
         ÄndraAgentInformation k = new ÄndraAgentInformation();
@@ -56,12 +60,12 @@ private InfDB idb;
         n.setVisible(true);
         dispose();
     }
-    public void adminÄndraOmrådesChef() {
+    public void adminÄndraOmrådesChef() { //KLAR
         ÄndraOmrådesChef a = new ÄndraOmrådesChef();
         a.setVisible(true);
     }
 
-    public void adminÄndraKontorsChef() {
+    public void adminÄndraKontorsChef() { //KLAR
         ÄndraKontorsChef k = new ÄndraKontorsChef();
         k.setVisible(true);
     }
@@ -313,11 +317,11 @@ private InfDB idb;
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        adminÄndraOmrådesChef();
+        adminÄndraOmrådesChef(); //KLAR
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        adminÄndraKontorsChef();
+        adminÄndraKontorsChef(); //KLAR
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -325,7 +329,7 @@ private InfDB idb;
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+    taBortUtrustning(); //KLAR
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
