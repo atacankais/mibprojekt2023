@@ -7,6 +7,7 @@ package javaapplication6;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import static javaapplication6.Reggaalien.idb;
+import javax.swing.JOptionPane;
 import oru.inf.InfDB;
 import oru.inf.InfException;
 
@@ -40,7 +41,7 @@ public class Reggaagent extends javax.swing.JFrame {
                    agentid=db.getAutoIncrement("agent","Agent_ID");
                }
                catch (InfException ex){
-                   System.out.println("HH");
+                   System.out.println("lyckades");
                    
                }
                return agentid;
@@ -195,13 +196,13 @@ public class Reggaagent extends javax.swing.JFrame {
     
          // TODO add your handling code here:
          
-         // här registerar jag en agent i databasen med hjälp av insert och använder en variable som kallas för
-         // INsert för att spara värden i.
+        
+         
+         // observera att Agent id genereras automatiskt så man behöver inte skriva den manualt när man fyller i formen. Sayed
          
 
                  
-                 
-               // String h = idb.fetchSingle("SELECT Omrades_ID from omrade WHERE Omrades_ID = '" +område.getText() + "'");
+               
          String INsert = "INSERT INTO Agent (Agent_ID, Namn, Telefon, Anstallningsdatum, Administrator, Losenord, Omrade) VALUES("
                  + getagetnid()+ ", '"
                  + agentnamn.getText() + "', '"
@@ -212,52 +213,15 @@ public class Reggaagent extends javax.swing.JFrame {
                  +område.getText() +")";
      try {
          db.insert(INsert);
+            JOptionPane.showMessageDialog(null, " EN ny agent registrerades");
          
      }
      catch (InfException ex) {
                  Logger.getLogger(Reggaagent.class.getName()).log(Level.SEVERE, null, ex);
                  System.out.println(" Något gick fel ");
+                 
              }
-         /*     String administratör = "UPDATE Agent SET Administrator='J' WHERE Namn='" + agentnamn.getText() + "'";
-         
-         //  Här använder jag en varaible som string för att uppdetera till adminstratör om användaren skriver "J"
-         String Notadmin = "UPDATE Agent SET Administrator='N' WHERE Namn='" + agentnamn.getText() + "'";
-         // Här använder jag String för at uppderar agenten om användaren skriver "N" vilket innebär att agent kommer inte
-         // registeras som admin
-         if ( admin.getText().equalsIgnoreCase("J")){  // här använder jag if statemetn och kollar om användare skriver "J"
-         // DÅ blir agenten administratör direkt
-         try {
-         db.fetchSingle(INsert);
-         db.fetchSingle(administratör);
-         System.out.println(" Agenten är nu admin");
-         } catch (InfException ex) {
-         Logger.getLogger(Reggaagent.class.getName()).log(Level.SEVERE, null, ex);
-         System.out.println(" Något gick fel ");
-         }
-         if ( admin.getSelectedText().equalsIgnoreCase("N")) {
-         
-         // om end-user skriver "N" då agent kommer inte vara adminstratör
-         
-         try {
-         db.fetchSingle(INsert);
-         db.fetchSingle(Notadmin);
-         System.out.println("En ny agent som inte varit admin tidigare är nu regitererad i systemet");
-         } catch (InfException ex) {
-         Logger.getLogger(Reggaagent.class.getName()).log(Level.SEVERE, null, ex);
-         System.out.println("Något gick fel, försök igen");
-         }
-         
-         
-         }
-         
-         
-         }
-         
-         
-         
-         
-         */
-    
+        
         
         
         

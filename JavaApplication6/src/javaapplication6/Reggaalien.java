@@ -239,6 +239,7 @@ public class Reggaalien extends javax.swing.JFrame {
              + denansvarigagenttillalien +")";
             System.out.println(INsert);
             idb.insert(INsert);
+      System.out.println(" EN ny alien registrerades i systemet");
          } catch (InfException ex) {
              Logger.getLogger(Reggaalien.class.getName()).log(Level.SEVERE, null, ex);
              System.out.println(" Något gick fel");

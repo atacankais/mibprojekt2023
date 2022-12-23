@@ -197,19 +197,14 @@ public class main extends javax.swing.JFrame {
                 String användarnamnalien = username.getText();
 
                 String losenord = idb.fetchSingle("SELECT Losenord from ALIEN where namn = '"+ användarnamnalien +"'");
-
-            if (losenord.equals(lösenordalien)) {
-              oppenmenyföralien();
-                this.dispose();
-
-            } else {
-                JOptionPane.showMessageDialog(null, "fel lösenord");
-
-            }
-            } catch (InfException ettUndantag) { //Funkar inte? om man slår in fel användarnamn ska de komma popup
-            JOptionPane.showMessageDialog(null, "försök igen ");
-        }
-        }   
+  oppenmenyföralien();
+           
+     
+         } 
+              catch (InfException ettUndantag) { 
+                                JOptionPane.showMessageDialog(null, " fel lösnord and namn");
+                                System.out.println("try again ");
+                      }          }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
