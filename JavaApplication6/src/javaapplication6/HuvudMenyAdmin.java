@@ -41,7 +41,7 @@ private InfDB idb;
         r.setVisible(true);
         }
     public void oppnatabortalien(){
-        Deletealienfromsystemet da= new Deletealienfromsystemet();
+        RaderaAlien da= new RaderaAlien();
         da.setVisible(true);
     }
     public void oppenändralösnordmenyföradmin(){
@@ -75,7 +75,7 @@ private InfDB idb;
         s.setVisible(true);
     }
     public void tabortagent(){
-        Deleteagentfromsystemet system= new Deleteagentfromsystemet();
+        RaderaAgent system= new RaderaAgent();
         system.setVisible(true);
     }
     /**
@@ -281,7 +281,7 @@ private InfDB idb;
     }// </editor-fold>//GEN-END:initComponents
 
     private void RegAlienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegAlienActionPerformed
-         oppnaalienreg();
+        oppnaalienreg();
     }//GEN-LAST:event_RegAlienActionPerformed
 
     private void RegAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegAgentActionPerformed
@@ -289,7 +289,7 @@ private InfDB idb;
     }//GEN-LAST:event_RegAgentActionPerformed
 
     private void RaderaAlienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RaderaAlienActionPerformed
-        oppnatabortalien();
+        oppnatabortalien(); // KLAR
     }//GEN-LAST:event_RaderaAlienActionPerformed
 
     private void ÄndraLösenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ÄndraLösenActionPerformed
@@ -297,7 +297,7 @@ private InfDB idb;
     }//GEN-LAST:event_ÄndraLösenActionPerformed
 
     private void LoggaUtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoggaUtActionPerformed
-        loggoutmeny();
+        loggoutmeny(); // KLAR
     }//GEN-LAST:event_LoggaUtActionPerformed
 
     private void ÄndraAlienInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ÄndraAlienInfoActionPerformed
@@ -305,7 +305,7 @@ private InfDB idb;
     }//GEN-LAST:event_ÄndraAlienInfoActionPerformed
 
     private void RaderaAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RaderaAgentActionPerformed
-       tabortagent();  
+        tabortagent();  // KLAR
     }//GEN-LAST:event_RaderaAgentActionPerformed
 
     private void SökAgentInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SökAgentInfoActionPerformed
@@ -313,7 +313,7 @@ private InfDB idb;
     }//GEN-LAST:event_SökAgentInfoActionPerformed
 
     private void ÄndraAgentInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ÄndraAgentInfoActionPerformed
-       ändraAgentInfo(); //KLAR
+        ändraAgentInfo(); //KLAR
     }//GEN-LAST:event_ÄndraAgentInfoActionPerformed
 
     private void ÄndraOmrChefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ÄndraOmrChefActionPerformed
@@ -325,11 +325,11 @@ private InfDB idb;
     }//GEN-LAST:event_ÄndraKonChefActionPerformed
 
     private void GeAdminTillAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GeAdminTillAgentActionPerformed
-        tilldelaAdminStatus();
+        tilldelaAdminStatus(); //KLAR
     }//GEN-LAST:event_GeAdminTillAgentActionPerformed
 
     private void RaderaUtruActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RaderaUtruActionPerformed
-    taBortUtrustning(); //KLAR
+        taBortUtrustning(); //KLAR
     }//GEN-LAST:event_RaderaUtruActionPerformed
 
     /**

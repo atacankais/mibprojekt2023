@@ -13,13 +13,13 @@ import oru.inf.InfException;
  *
  * @author jafar
  */
-public class Deletealienfromsystemet extends javax.swing.JFrame {
+public class RaderaAlien extends javax.swing.JFrame {
 
      private static InfDB idb;
     /**
      * Creates new form Deletealienfromsystemet
      */
-    public Deletealienfromsystemet() {
+    public RaderaAlien() {
         
         initComponents();
         
@@ -198,21 +198,23 @@ public class Deletealienfromsystemet extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Deletealienfromsystemet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RaderaAlien.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Deletealienfromsystemet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RaderaAlien.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Deletealienfromsystemet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RaderaAlien.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Deletealienfromsystemet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RaderaAlien.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Deletealienfromsystemet().setVisible(true);
+                new RaderaAlien().setVisible(true);
             }
         });
     }

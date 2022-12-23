@@ -13,12 +13,12 @@ import oru.inf.InfException;
  *
  * @author jafar
  */
-public class Deleteagentfromsystemet extends javax.swing.JFrame {
+public class RaderaAgent extends javax.swing.JFrame {
 private static InfDB idb;
     /**
      * Creates new form Deleteagentfromsystemet
      */
-    public Deleteagentfromsystemet( ) {
+    public RaderaAgent( ) {
       
        initComponents();
         
@@ -111,7 +111,7 @@ private static InfDB idb;
             System.out.println(" Ageneten är borttagit "); 
             }
     } catch (InfException ex) {
-        Logger.getLogger(Deleteagentfromsystemet.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(RaderaAgent.class.getName()).log(Level.SEVERE, null, ex);
         System.out.println(" Försök igen ");
     }
         
@@ -136,21 +136,23 @@ private static InfDB idb;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Deleteagentfromsystemet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RaderaAgent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Deleteagentfromsystemet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RaderaAgent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Deleteagentfromsystemet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RaderaAgent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Deleteagentfromsystemet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RaderaAgent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-              new Deleteagentfromsystemet().setVisible(true);
+              new RaderaAgent().setVisible(true);
             }
         });
     }
