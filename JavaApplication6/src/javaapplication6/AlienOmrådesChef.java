@@ -4,17 +4,26 @@
  */
 package javaapplication6;
 
+import javax.swing.JOptionPane;
+import oru.inf.InfDB;
+import oru.inf.InfException;
+
 /**
  *
  * @author ZIbra
  */
 public class AlienOmrådesChef extends javax.swing.JFrame {
-
+private static InfDB idb;
     /**
      * Creates new form AlienOmrådesChef
      */
     public AlienOmrådesChef() {
         initComponents();
+        try {
+           idb = new InfDB("mibdb", "3306", "mibdba", "mibkey");
+        } catch (InfException ex) {
+            
+        }
     }
 
     /**
@@ -27,6 +36,9 @@ public class AlienOmrådesChef extends javax.swing.JFrame {
     private void initComponents() {
 
         chef = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        omid = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -37,28 +49,65 @@ public class AlienOmrådesChef extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Välj ditt områdes ID:");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel2.setText("Min områdeschef");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(125, 125, 125)
-                .addComponent(chef, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(148, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(125, 125, 125)
+                        .addComponent(chef, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addComponent(jLabel1)
+                        .addGap(42, 42, 42)
+                        .addComponent(omid, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(119, 119, 119)
+                        .addComponent(jLabel2)))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(125, 125, 125)
+                .addGap(15, 15, 15)
+                .addComponent(jLabel2)
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(omid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45)
                 .addComponent(chef, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void chefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chefActionPerformed
-        // TODO add your handling code here:
+       
+           
+           try{
+           var oid = omid.getText();
+           String agid = idb.fetchSingle("SELECT Agent_ID from omradeschef WHERE omrade =" + oid +"");
+           String agnamn = idb.fetchSingle("SELECT Namn FROM agent where Agent_ID = '" + agid + "'");
+           var tel = idb.fetchSingle("SELECT Telefon FROM Agent where Agent_ID = '" + agid + "'");
+           var plat = idb.fetchSingle("SELECT Omrade FROM Agent where Agent_ID = '" + agid + "'");
+           
+           JOptionPane.showMessageDialog(null, "Namn: " + agnamn +  "\nTelefon: " + tel + "\nOmråde: " + plat + "");
+
+            }
+           catch(InfException a) {
+           JOptionPane.showMessageDialog(null, "Nånting gick fel");   
+           System.out.println("Nånting gick fel");
+        }
+
     }//GEN-LAST:event_chefActionPerformed
 
     /**
@@ -98,5 +147,8 @@ public class AlienOmrådesChef extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton chef;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JTextField omid;
     // End of variables declaration//GEN-END:variables
 }
