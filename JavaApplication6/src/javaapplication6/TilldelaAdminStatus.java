@@ -101,7 +101,7 @@ private static InfDB idb;
             JOptionPane.showMessageDialog(null, agentnamn + " är nu admin.");   
 
         }
-        catch(Exception e) {
+        catch(InfException e) {
            JOptionPane.showMessageDialog(null, "Nånting gick fel");   
            System.out.println("Nånting gick fel");
         }

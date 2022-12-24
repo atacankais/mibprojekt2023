@@ -4,17 +4,28 @@
  */
 package javaapplication6;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import oru.inf.InfDB;
+import oru.inf.InfException;
+
 /**
  *
  * @author kristinamalki
  */
 public class SökAlienInfo extends javax.swing.JFrame {
+private static InfDB idb;
 
     /**
      * Creates new form SökAlienInfo
      */
     public SökAlienInfo() {
         initComponents();
+        try {
+           idb = new InfDB("mibdb", "3306", "mibdba", "mibkey");
+        } catch (InfException ex) {
+            
+        }
     }
 
     /**
@@ -27,8 +38,8 @@ public class SökAlienInfo extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        väljAlien = new javax.swing.JButton();
+        alid = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -36,7 +47,12 @@ public class SökAlienInfo extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabel1.setText("Välj alien");
 
-        jButton1.setText("OK");
+        väljAlien.setText("OK");
+        väljAlien.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                väljAlienActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Alien ID:");
 
@@ -47,15 +63,15 @@ public class SökAlienInfo extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(153, 153, 153)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
+                    .addComponent(väljAlien)
                     .addComponent(jLabel1))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(73, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addGap(54, 54, 54)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(85, 85, 85))
+                .addGap(44, 44, 44)
+                .addComponent(alid, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(95, 95, 95))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -64,15 +80,35 @@ public class SökAlienInfo extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(76, 76, 76)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(alid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(väljAlien)
                 .addGap(48, 48, 48))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void väljAlienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_väljAlienActionPerformed
+         try {  
+          var alienid = alid.getText();
+          var id = idb.fetchSingle("SELECT Alien_ID FROM Alien where Alien_ID = '" + alienid + "'");
+          String namn = idb.fetchSingle("SELECT Namn FROM Alien where Alien_ID = '" + alienid + "'");
+          var reg = idb.fetchSingle("SELECT Registreringsdatum FROM Alien where Alien_ID = '" + alienid + "'");
+          var losen = idb.fetchSingle("SELECT Losenord FROM Alien where Alien_ID = '" + alienid + "'");
+          var tel = idb.fetchSingle("SELECT Telefon FROM Alien where Alien_ID = '" + alienid + "'");
+          var plat = idb.fetchSingle("SELECT Plats FROM Alien where Alien_ID = '" + alienid + "'");
+          var ansvarig = idb.fetchSingle("SELECT Ansvarig_Agent FROM Alien where Alien_ID = '" + alienid + "'");
+
+          JOptionPane.showMessageDialog(null, "ID: " + id + "\nNamn: " + namn + "\nRegistreringsdatum: " + reg + "\nLösenord: " + losen + "\nTelefon: " + tel + "\nPlats: " + plat + "\nAnsvarig agent: " + ansvarig + "");
+         }
+         catch(InfException a) {
+           JOptionPane.showMessageDialog(null, "Nånting gick fel");   
+           System.out.println("Nånting gick fel");
+        }
+            
+    }//GEN-LAST:event_väljAlienActionPerformed
 
     /**
      * @param args the command line arguments
@@ -113,9 +149,9 @@ public class SökAlienInfo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextField alid;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton väljAlien;
     // End of variables declaration//GEN-END:variables
 }
