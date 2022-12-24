@@ -4,7 +4,7 @@
  */
 package javaapplication6;
 
-import static javaapplication6.LoggainAgent.idb;
+import static javaapplication6.LoginAgent.idb;
 import oru.inf.InfDB;
 import oru.inf.InfException;
 
@@ -12,12 +12,12 @@ import oru.inf.InfException;
  *
  * @author jafar
  */
-public class Startaapplikationen extends javax.swing.JFrame {
+public class StartaApplikationen extends javax.swing.JFrame {
    public static InfDB idb; 
     /**
      * Creates new form Startaapplikationen
      */
-    public Startaapplikationen() {
+    public StartaApplikationen() {
         initComponents();
         try {
            idb = new InfDB("mibdb", "3306", "mibdba", "mibkey");
@@ -33,12 +33,12 @@ public class Startaapplikationen extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
      public void oppnaagent(){
-    LoggainAgent appp= new LoggainAgent();
+    LoginAgent appp= new LoginAgent();
     appp.setVisible(true);
     }
      
      public void oppnaaliensida(){
-         LoggainAlien hh= new LoggainAlien (); 
+         LoginAlien hh= new LoginAlien (); 
          hh.setVisible(true);
      }
     
@@ -157,20 +157,21 @@ public class Startaapplikationen extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Startaapplikationen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StartaApplikationen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Startaapplikationen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StartaApplikationen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Startaapplikationen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StartaApplikationen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Startaapplikationen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(StartaApplikationen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Startaapplikationen().setVisible(true);
+                new StartaApplikationen().setVisible(true);
             }
         });
     }
