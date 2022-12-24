@@ -190,7 +190,7 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
     }
     
     public void reggautrutning(){
-        RegistreraUtrustning u= new RegistreraUtrustning();
+        RegistUtrustningNy u= new RegistUtrustningNy();
         u.setVisible(true);
     }
     

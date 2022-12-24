@@ -4,7 +4,7 @@
  */
 package javaapplication6;
 
-import static javaapplication6.Mainapp.idb;
+import static javaapplication6.LoggainAgent.idb;
 import oru.inf.InfDB;
 import oru.inf.InfException;
 
@@ -33,12 +33,12 @@ public class Startaapplikationen extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
      public void oppnaagent(){
-    Mainapp appp= new Mainapp();
+    LoggainAgent appp= new LoggainAgent();
     appp.setVisible(true);
     }
      
      public void oppnaaliensida(){
-         loginalien hh= new loginalien (); 
+         LoggainAlien hh= new LoggainAlien (); 
          hh.setVisible(true);
      }
     

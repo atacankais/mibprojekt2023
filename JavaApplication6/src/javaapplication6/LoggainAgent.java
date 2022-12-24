@@ -11,12 +11,12 @@ import oru.inf.InfException;
  *
  * @author jafar
  */
-public class Mainapp extends javax.swing.JFrame {
+public class LoggainAgent extends javax.swing.JFrame {
  public static InfDB idb; 
     /**
      * Creates new form Mainapp
      */
-    public Mainapp() {
+    public LoggainAgent() {
         initComponents();
            try {
            idb = new InfDB("mibdb", "3306", "mibdba", "mibkey");
@@ -167,20 +167,21 @@ public class Mainapp extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Mainapp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoggainAgent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Mainapp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoggainAgent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Mainapp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoggainAgent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Mainapp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LoggainAgent.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Mainapp().setVisible(true);
+                new LoggainAgent().setVisible(true);
             }
         });
     }
