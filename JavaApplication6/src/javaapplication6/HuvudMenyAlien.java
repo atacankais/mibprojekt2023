@@ -23,6 +23,12 @@ public class HuvudMenyAlien extends javax.swing.JFrame {
         Ändralösenordföragenochalien k= new Ändralösenordföragenochalien();
         k.setVisible(true);
         }
+        
+        public void visaChef(){
+        
+        AlienOmrådesChef a = new AlienOmrådesChef();
+        a.setVisible(true);
+        }
     
     
     
@@ -53,6 +59,11 @@ public class HuvudMenyAlien extends javax.swing.JFrame {
         });
 
         Område.setText("Visa min områdescef info");
+        Område.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OmrådeActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
         jLabel1.setText("Huvudmeny Alien");
@@ -93,6 +104,10 @@ public class HuvudMenyAlien extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
      oppenändralösnordmeny();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void OmrådeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OmrådeActionPerformed
+        visaChef();
+    }//GEN-LAST:event_OmrådeActionPerformed
 
     /**
      * @param args the command line arguments
