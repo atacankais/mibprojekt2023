@@ -118,8 +118,6 @@ public class loginalien extends javax.swing.JFrame {
             try {
              
                 String användarnamnalien = username.getText();
-                   String lösenordalien = userpasscode.getText();
-
                 String losenord = idb.fetchSingle(("SELECT Losenord from ALIEN where namn= '"+ användarnamnalien+"'"));
                 System.out.println("du e inloggat");
                  alienmenyy();
