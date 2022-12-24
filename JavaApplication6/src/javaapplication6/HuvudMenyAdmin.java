@@ -26,6 +26,11 @@ private InfDB idb;
         } 
     }
     
+    public void sökAgentInfo() {
+        SökAgentInfo a = new SökAgentInfo();
+        a.setVisible(true);
+    }
+    
     public void taBortUtrustning() { //KLAR
         TaBortUtrustning k = new TaBortUtrustning();
         k.setVisible(true);
@@ -281,11 +286,11 @@ private InfDB idb;
     }// </editor-fold>//GEN-END:initComponents
 
     private void RegAlienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegAlienActionPerformed
-        oppnaalienreg();
+        oppnaalienreg(); //KLAR
     }//GEN-LAST:event_RegAlienActionPerformed
 
     private void RegAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegAgentActionPerformed
-        oppnaalienreg();
+        oppnaalienreg(); //KLAR
     }//GEN-LAST:event_RegAgentActionPerformed
 
     private void RaderaAlienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RaderaAlienActionPerformed
@@ -309,7 +314,7 @@ private InfDB idb;
     }//GEN-LAST:event_RaderaAgentActionPerformed
 
     private void SökAgentInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SökAgentInfoActionPerformed
-        // TODO add your handling code here:
+        sökAgentInfo(); //KLAR
     }//GEN-LAST:event_SökAgentInfoActionPerformed
 
     private void ÄndraAgentInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ÄndraAgentInfoActionPerformed
