@@ -4,17 +4,26 @@
  */
 package javaapplication6;
 
+import javax.swing.JOptionPane;
+import oru.inf.InfDB;
+import oru.inf.InfException;
+
 /**
  *
  * @author kristinamalki
  */
 public class SökOmrådesChefAgent extends javax.swing.JFrame {
-
+private static InfDB idb;
     /**
      * Creates new form SökOmrådesChefAgent
      */
     public SökOmrådesChefAgent() {
         initComponents();
+        try {
+           idb = new InfDB("mibdb", "3306", "mibdba", "mibkey");
+        } catch (InfException ex) {
+            
+        }
     }
 
     /**
@@ -26,21 +35,21 @@ public class SökOmrådesChefAgent extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        omrid = new javax.swing.JTextField();
+        sök = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("OK");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        sök.setText("OK");
+        sök.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                sökActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Område:");
+        jLabel1.setText("Område ID:");
 
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabel2.setText("Områdeschef");
@@ -50,16 +59,16 @@ public class SökOmrådesChefAgent extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(75, Short.MAX_VALUE)
+                .addContainerGap(61, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(68, 68, 68)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(omrid, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(158, 158, 158)
-                        .addComponent(jButton1))
+                        .addComponent(sök))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(143, 143, 143)
                         .addComponent(jLabel2)))
@@ -72,19 +81,30 @@ public class SökOmrådesChefAgent extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(81, 81, 81)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(omrid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(sök)
                 .addGap(56, 56, 56))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void sökActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sökActionPerformed
+        try {  
+          var omid = omrid.getText();
+          var id = idb.fetchSingle("SELECT Agent_ID FROM Omradeschef where Omrade = '" + omid + "'");
+          var agnamn = idb.fetchSingle("SELECT Namn FROM agent where Agent_ID = '" + id + "'");
+
+         
+          JOptionPane.showMessageDialog(null, "Områdeschef: " + agnamn + "");
+         }
+         catch(InfException s) {
+           JOptionPane.showMessageDialog(null, "Nånting gick fel");   
+           System.out.println("Nånting gick fel");
+        }
+    }//GEN-LAST:event_sökActionPerformed
 
     /**
      * @param args the command line arguments
@@ -122,9 +142,9 @@ public class SökOmrådesChefAgent extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField omrid;
+    private javax.swing.JButton sök;
     // End of variables declaration//GEN-END:variables
 }
