@@ -50,7 +50,7 @@ private InfDB idb;
     }
     
     public void loggoutmeny(){
-        main m= new main();
+        Startaapplikationen  m= new Startaapplikationen();
         m.setVisible(true);
         dispose();
     }
