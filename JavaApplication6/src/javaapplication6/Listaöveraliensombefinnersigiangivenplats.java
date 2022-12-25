@@ -98,7 +98,7 @@ ArrayList namnpåalien;
        
             namnpåalien =idb.fetchColumn("select namn from alien join plats on Alien.Plats = Plats.Plats_ID where Benamning = '" +benmaning+ "'");
             
-          JOptionPane.showMessageDialog(null,"Namn:"+ namnpåalien+ "");
+          JOptionPane.showMessageDialog(null,"Namn på alien som befinner sig i detta ställe:"+ namnpåalien+ "");
     } catch (InfException ex) {
         Logger.getLogger(Listaöveraliensombefinnersigiangivenplats.class.getName()).log(Level.SEVERE, null, ex);
     }
