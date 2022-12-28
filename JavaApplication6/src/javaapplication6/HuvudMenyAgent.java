@@ -175,7 +175,7 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
     }
     
     private void listaOmrådeAliensInfo(){
-        AlienOmråde A = new AlienOmråde();
+        Listaöveraliensombefinnersigiangivenplats A = new Listaöveraliensombefinnersigiangivenplats();
         A.setVisible(true);
     }
     
@@ -204,12 +204,7 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
         SökOmrådesChefAgent c = new SökOmrådesChefAgent();
         c.setVisible(true);
     }
-    
-    public void SeAlienListaOmrådeFörAgent(){
-        SeAlienListaOmrådeFörAgent LO = new SeAlienListaOmrådeFörAgent();
-        LO.setVisible(true);
-
-    }
+   
     
     
     
@@ -254,7 +249,7 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-              SeAlienListaOmrådeFörAgent();
+              listaOmrådeAliensInfo();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     
