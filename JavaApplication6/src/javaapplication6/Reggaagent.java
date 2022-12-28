@@ -218,6 +218,7 @@ public class Reggaagent extends javax.swing.JFrame {
      }
      catch (InfException ex) {
                  Logger.getLogger(Reggaagent.class.getName()).log(Level.SEVERE, null, ex);
+                 JOptionPane.showMessageDialog(null, "Nånting gick fel");
                  System.out.println(" Något gick fel ");
                  
              }

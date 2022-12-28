@@ -4,6 +4,7 @@
  */
 package javaapplication6;
 
+import javax.swing.JOptionPane;
 import oru.inf.InfDB;
 import oru.inf.InfException;
 
@@ -217,6 +218,7 @@ public class AdminÄndraAllAlienInfo extends javax.swing.JFrame {
 
         }
         catch(InfException e) {
+            JOptionPane.showMessageDialog(null, "Ändringen gick inte igenom");
             System.out.println("Nånting gick fel");
         }
     }//GEN-LAST:event_jButton1ActionPerformed

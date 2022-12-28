@@ -100,6 +100,7 @@ ArrayList namnpåalien;
             
           JOptionPane.showMessageDialog(null,"Namn på alien som befinner sig i detta ställe:"+ namnpåalien+ "");
     } catch (InfException ex) {
+        JOptionPane.showMessageDialog(null, "Nånting gick fel");
         Logger.getLogger(Listaöveraliensombefinnersigiangivenplats.class.getName()).log(Level.SEVERE, null, ex);
     }
         

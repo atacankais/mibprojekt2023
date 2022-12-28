@@ -6,6 +6,7 @@ package javaapplication6;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import oru.inf.InfDB;
 import oru.inf.InfException;
 
@@ -131,7 +132,7 @@ public class RaderaAlien extends javax.swing.JFrame {
              
          } catch (InfException ex) {
              
-            
+            JOptionPane.showMessageDialog(null, "Nånting gick fel");
              System.out.println(" Något gick fel, vänligen försök igen");
          }
          

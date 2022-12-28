@@ -4,6 +4,7 @@
  */
 package javaapplication6;
 
+import javax.swing.JOptionPane;
 import oru.inf.InfDB;
 import oru.inf.InfException;
 
@@ -119,6 +120,7 @@ private static InfDB idb;
 
         }
         catch(Exception e) {
+           JOptionPane.showMessageDialog(null, "Nånting gick fel");
            System.out.println("Nånting gick fel");
         }
     }//GEN-LAST:event_jButton1ActionPerformed

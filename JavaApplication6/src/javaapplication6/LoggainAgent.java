@@ -4,6 +4,7 @@
  */
 package javaapplication6;
 
+import javax.swing.JOptionPane;
 import oru.inf.InfDB;
 import oru.inf.InfException;
 
@@ -142,7 +143,7 @@ public class LoggainAgent extends javax.swing.JFrame {
 
                 
             } catch (InfException ettUndantag) {
-               
+               JOptionPane.showMessageDialog(null, "Nånting gick fel");
                 System.out.println("try again ");
             }
        }

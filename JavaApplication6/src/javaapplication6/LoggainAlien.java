@@ -103,18 +103,7 @@ public class LoggainAlien extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-         
+       
             try {
              
                 String användarnamnalien = username.getText();
@@ -122,7 +111,7 @@ public class LoggainAlien extends javax.swing.JFrame {
                 System.out.println("du e inloggat");
                  alienmenyy();
        } catch (InfException ettUndantag) { 
-            JOptionPane.showMessageDialog(null, "försök igen ");
+            JOptionPane.showMessageDialog(null, "Nånting gick fel");
         }
        
        

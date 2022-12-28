@@ -178,7 +178,7 @@ private static InfDB idb;
                             JOptionPane.showMessageDialog(null, " Du har ändrat ditt lösenord och ditt nya lösenord är "+newpasscode);
                             } 
                             catch (InfException ettUndantag) {
-                          
+                                JOptionPane.showMessageDialog(null, "Nånting gick fel");
                             System.out.println(" Något gick fel, vänligen förösk igen");
                             } 
         
@@ -201,7 +201,7 @@ private static InfDB idb;
                             JOptionPane.showMessageDialog(null, " Ditt nya lösenord är "+newpasscode);
                             } 
                             catch (InfException ettUndantag) {
-                          
+                                JOptionPane.showMessageDialog(null, "Nånting gick fel");
                             System.out.println(" Något gick fel, vänligen försök igen");
                             } 
         
