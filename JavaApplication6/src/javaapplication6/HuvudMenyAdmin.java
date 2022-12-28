@@ -26,6 +26,11 @@ private InfDB idb;
         } 
     }
     
+     public void reggaAgent() {
+        Reggaagent b = new Reggaagent();
+        b.setVisible(true);
+    }
+    
     public void sökAgentInfo() {
         SökAgentInfo a = new SökAgentInfo();
         a.setVisible(true);
@@ -290,7 +295,7 @@ private InfDB idb;
     }//GEN-LAST:event_RegAlienActionPerformed
 
     private void RegAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegAgentActionPerformed
-        oppnaalienreg(); //KLAR
+        reggaAgent(); //KLAR
     }//GEN-LAST:event_RegAgentActionPerformed
 
     private void RaderaAlienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RaderaAlienActionPerformed
