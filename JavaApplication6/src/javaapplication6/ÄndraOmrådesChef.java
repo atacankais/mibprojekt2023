@@ -45,9 +45,9 @@ private static InfDB idb;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Välj områdes ID");
+        jLabel1.setText("Välj områdes ID:");
 
-        jLabel2.setText("Tilldela ny områdeschef");
+        jLabel2.setText("Tilldela ny områdeschef:");
 
         jLabel3.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
         jLabel3.setText("Ändra områdeschef");
@@ -84,9 +84,9 @@ private static InfDB idb;
                                     .addComponent(agentid, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(omrid, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(133, 133, 133)
+                        .addGap(141, 141, 141)
                         .addComponent(jButton1)))
-                .addGap(0, 86, Short.MAX_VALUE))
+                .addGap(0, 82, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,9 +101,9 @@ private static InfDB idb;
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(agentid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(26, 26, 26))
+                .addGap(28, 28, 28))
         );
 
         pack();
@@ -120,7 +120,7 @@ private static InfDB idb;
 
         }
         catch(Exception e) {
-           JOptionPane.showMessageDialog(null, "Nånting gick fel");
+           JOptionPane.showMessageDialog(null, "Någonting gick fel");
            System.out.println("Nånting gick fel");
         }
     }//GEN-LAST:event_jButton1ActionPerformed

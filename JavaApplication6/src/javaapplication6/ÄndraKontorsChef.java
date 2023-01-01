@@ -45,9 +45,9 @@ private static InfDB idb;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Välj kontorsbeteckning");
+        jLabel1.setText("Välj kontorsbeteckning:");
 
-        jLabel2.setText("Tilldela ny kontorschef");
+        jLabel2.setText("Tilldela ny kontorschef:");
 
         jLabel3.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
         jLabel3.setText("Ändra kontorsschef");
@@ -76,13 +76,13 @@ private static InfDB idb;
                             .addComponent(jLabel2)
                             .addComponent(jLabel1))
                         .addGap(44, 44, 44)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nykchef, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(kontor, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(kontor)
+                            .addComponent(nykchef, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(85, 85, 85)
                         .addComponent(jLabel3)))
-                .addGap(0, 93, Short.MAX_VALUE))
+                .addGap(0, 73, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(137, 137, 137)
                 .addComponent(ändra)
@@ -119,7 +119,7 @@ private static InfDB idb;
 
         }
         catch(Exception e) {
-            JOptionPane.showMessageDialog(null, "Nånting gick fel");   
+            JOptionPane.showMessageDialog(null, "Någonting gick fel");   
             System.out.println("Nånting gick fel");
             
         }

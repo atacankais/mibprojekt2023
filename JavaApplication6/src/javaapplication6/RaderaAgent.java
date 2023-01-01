@@ -108,11 +108,11 @@ private static InfDB idb;
             deltete=true;
             if( deltete=true){
           String i = idb.fetchSingle(delte);
-            System.out.println(" Ageneten är borttagit "); 
+            System.out.println(" Ageneten är borttagen "); 
             }
     } catch (InfException ex) {
         Logger.getLogger(RaderaAgent.class.getName()).log(Level.SEVERE, null, ex);
-        System.out.println(" Försök igen ");
+        System.out.println(" Vänligen försök igen ");
     }
         
         

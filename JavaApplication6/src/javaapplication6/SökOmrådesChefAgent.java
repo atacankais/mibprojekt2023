@@ -49,7 +49,7 @@ private static InfDB idb;
             }
         });
 
-        jLabel1.setText("Område ID:");
+        jLabel1.setText("Områdes ID:");
 
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabel2.setText("Områdeschef");
@@ -59,7 +59,7 @@ private static InfDB idb;
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(61, Short.MAX_VALUE)
+                .addContainerGap(54, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(68, 68, 68)
                 .addComponent(omrid, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -101,7 +101,7 @@ private static InfDB idb;
           JOptionPane.showMessageDialog(null, "Områdeschef: " + agnamn + "");
          }
          catch(InfException s) {
-           JOptionPane.showMessageDialog(null, "Nånting gick fel");   
+           JOptionPane.showMessageDialog(null, "Någonting gick fel");   
            System.out.println("Nånting gick fel");
         }
     }//GEN-LAST:event_sökActionPerformed

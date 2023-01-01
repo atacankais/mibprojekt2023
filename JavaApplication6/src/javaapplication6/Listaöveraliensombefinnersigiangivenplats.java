@@ -47,44 +47,60 @@ ArrayList namnpåalien;
         jLabel1 = new javax.swing.JLabel();
         ortnamn = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Skriv plats namn");
+        jLabel1.setText("Platsen:");
 
-        jButton1.setText("Submit");
+        ortnamn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ortnamnActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("OK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel2.setText("Aliens som befinner sig på platsen");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(70, 70, 70))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(68, 68, 68)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ortnamn, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ortnamn, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(104, 104, 104)
+                        .addGap(163, 163, 163)
                         .addComponent(jButton1)))
-                .addContainerGap(163, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(ortnamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(59, 59, 59)
+                .addGap(24, 24, 24)
+                .addComponent(jLabel2)
+                .addGap(62, 62, 62)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ortnamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(61, 61, 61)
                 .addComponent(jButton1)
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
         pack();
@@ -98,9 +114,9 @@ ArrayList namnpåalien;
        
             namnpåalien =idb.fetchColumn("select namn from alien join plats on Alien.Plats = Plats.Plats_ID where Benamning = '" +benmaning+ "'");
             
-          JOptionPane.showMessageDialog(null,"Namn på alien som befinner sig i detta ställe:"+ namnpåalien+ "");
+          JOptionPane.showMessageDialog(null,"Dessa aliens  befinner sig i denna plats:"+ namnpåalien+ "");
     } catch (InfException ex) {
-        JOptionPane.showMessageDialog(null, "Nånting gick fel");
+        JOptionPane.showMessageDialog(null, "Någonting gick fel");
         Logger.getLogger(Listaöveraliensombefinnersigiangivenplats.class.getName()).log(Level.SEVERE, null, ex);
     }
         
@@ -111,6 +127,10 @@ ArrayList namnpåalien;
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void ortnamnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ortnamnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ortnamnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,6 +170,7 @@ ArrayList namnpåalien;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField ortnamn;
     // End of variables declaration//GEN-END:variables
 }

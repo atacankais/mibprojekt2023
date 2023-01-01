@@ -101,7 +101,7 @@ private static InfDB idb;
 
       } 
       catch(InfException e) {
-           JOptionPane.showMessageDialog(null, "Agent finns inte");   
+           JOptionPane.showMessageDialog(null, "Agenten finns inte");   
            System.out.println("Nånting gick fel");
           
       }

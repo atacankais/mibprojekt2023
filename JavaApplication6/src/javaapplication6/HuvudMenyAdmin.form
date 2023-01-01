@@ -24,46 +24,43 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <Component id="jLabel2" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                              <Component id="jLabel2" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="RaderaAlien" alignment="0" max="32767" attributes="0"/>
-                          <Component id="ÄndraAlienInfo" alignment="0" max="32767" attributes="0"/>
-                          <Component id="RegAlien" alignment="0" max="32767" attributes="0"/>
-                      </Group>
+                  <Component id="RaderaAlien" alignment="0" max="32767" attributes="0"/>
+                  <Component id="ÄndraAlienInfo" alignment="0" max="32767" attributes="0"/>
+                  <Component id="RegAlien" alignment="0" max="32767" attributes="0"/>
+              </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="RaderaAgent" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="ÄndraAgentInfo" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="ÄndraOmrChef" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="ÄndraKonChef" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="RaderaUtru" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="GeAdminTillAgent" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="SökAgentInfo" max="32767" attributes="0"/>
-                                  <Component id="RegAgent" max="32767" attributes="0"/>
-                                  <Component id="ÄndraLösen" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="LoggaUt" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="RaderaAgent" alignment="1" max="32767" attributes="0"/>
+                          <Component id="ÄndraAgentInfo" alignment="1" max="32767" attributes="0"/>
+                          <Component id="ÄndraOmrChef" alignment="1" max="32767" attributes="0"/>
+                          <Component id="ÄndraKonChef" alignment="1" max="32767" attributes="0"/>
+                          <Component id="RaderaUtru" alignment="1" max="32767" attributes="0"/>
+                          <Component id="GeAdminTillAgent" alignment="1" max="32767" attributes="0"/>
+                          <Component id="SökAgentInfo" max="32767" attributes="0"/>
+                          <Component id="RegAgent" max="32767" attributes="0"/>
+                          <Component id="ÄndraLösen" alignment="0" max="32767" attributes="0"/>
                       </Group>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="LoggaUt" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="170" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -228,7 +225,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="LoggaUt">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Logout"/>
+        <Property name="text" type="java.lang.String" value="Logga ut"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LoggaUtActionPerformed"/>

@@ -67,24 +67,25 @@ private static InfDB idb;
                         .addGap(70, 70, 70)
                         .addComponent(agid, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(118, 118, 118)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(leta)
-                            .addComponent(jLabel1))))
+                        .addGap(101, 101, 101)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(124, 124, 124)
+                        .addComponent(leta)))
                 .addContainerGap(75, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(32, 32, 32)
                 .addComponent(jLabel1)
-                .addGap(61, 61, 61)
+                .addGap(55, 55, 55)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(agid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addGap(46, 46, 46)
                 .addComponent(leta)
-                .addGap(52, 52, 52))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         pack();
@@ -104,8 +105,8 @@ private static InfDB idb;
           JOptionPane.showMessageDialog(null, "ID: " + id + "\nNamn: " + namn + "\nAnställningsdatum: " + ansdatum + "\nLösenord: " + losen + "\nTelefon: " + tel + "\nOmråde: " + plat + "\nAdministratör: " + admin + "");
          }
          catch(InfException a) {
-           JOptionPane.showMessageDialog(null, "Nånting gick fel");   
-           System.out.println("Nånting gick fel");
+           JOptionPane.showMessageDialog(null, "Någonting gick fel");   
+           System.out.println("Någonting gick fel");
         }
     }//GEN-LAST:event_letaActionPerformed
 

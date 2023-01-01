@@ -45,9 +45,9 @@ private static InfDB idb;
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
-        jLabel1.setText("Välj alien");
+        jLabel1.setText("Sök information om en alien");
 
-        väljAlien.setText("OK");
+        väljAlien.setText("Sök");
         väljAlien.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 väljAlienActionPerformed(evt);
@@ -62,29 +62,32 @@ private static InfDB idb;
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(73, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addGap(44, 44, 44)
-                .addComponent(alid, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(95, 95, 95))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(153, 153, 153)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(väljAlien)
-                    .addComponent(jLabel1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(44, 44, 44)
+                        .addComponent(alid, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(95, 95, 95))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(83, 83, 83))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(157, 157, 157)
+                .addComponent(väljAlien)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addGap(39, 39, 39)
                 .addComponent(jLabel1)
-                .addGap(76, 76, 76)
+                .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(alid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                .addGap(49, 49, 49)
                 .addComponent(väljAlien)
-                .addGap(48, 48, 48))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
 
         pack();
@@ -104,8 +107,8 @@ private static InfDB idb;
           JOptionPane.showMessageDialog(null, "ID: " + id + "\nNamn: " + namn + "\nRegistreringsdatum: " + reg + "\nLösenord: " + losen + "\nTelefon: " + tel + "\nPlats: " + plat + "\nAnsvarig agent: " + ansvarig + "");
          }
          catch(InfException a) {
-           JOptionPane.showMessageDialog(null, "Nånting gick fel");   
-           System.out.println("Nånting gick fel");
+           JOptionPane.showMessageDialog(null, "Någonting gick fel");   
+           System.out.println("Någonting gick fel");
         }
             
     }//GEN-LAST:event_väljAlienActionPerformed
