@@ -39,8 +39,16 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="201" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="201" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jLabel3" min="-2" pref="443" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
@@ -54,7 +62,9 @@
                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                   <Component id="Område" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="288" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="16" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -82,6 +92,14 @@
           <Font name="Helvetica Neue" size="24" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Huvudmeny Alien"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="/Users/kristinamalki/AAAABQXNwomp1GGXNceH8XjNBXccpSL97Eemad5wYfFdF-f82SLe9956YlEuA85q_cyvsZdfqmNXQamto-IGRLgwk77txVN_j6EPA7xk3GU3nztOhQMqgU2ydUDO.jpeg"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="jLabel3"/>
       </Properties>
     </Component>
   </SubComponents>

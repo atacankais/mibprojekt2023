@@ -45,6 +45,7 @@ public class HuvudMenyAlien extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         Område = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
 
@@ -67,6 +68,9 @@ public class HuvudMenyAlien extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
         jLabel1.setText("Huvudmeny Alien");
 
+        jLabel3.setIcon(new javax.swing.ImageIcon("/Users/kristinamalki/AAAABQXNwomp1GGXNceH8XjNBXccpSL97Eemad5wYfFdF-f82SLe9956YlEuA85q_cyvsZdfqmNXQamto-IGRLgwk77txVN_j6EPA7xk3GU3nztOhQMqgU2ydUDO.jpeg")); // NOI18N
+        jLabel3.setText("jLabel3");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -79,8 +83,13 @@ public class HuvudMenyAlien extends javax.swing.JFrame {
                 .addGap(49, 49, 49))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(201, 201, 201))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(201, 201, 201))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(71, 71, 71))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,7 +100,9 @@ public class HuvudMenyAlien extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1)
                     .addComponent(Område))
-                .addContainerGap(288, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel3)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pack();
@@ -146,5 +157,6 @@ public class HuvudMenyAlien extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
