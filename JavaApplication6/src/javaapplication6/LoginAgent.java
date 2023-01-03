@@ -124,7 +124,7 @@ public class LoginAgent extends javax.swing.JFrame {
        {
             
           if 
-              (Valideringen.kollatomRuta(username)){
+              (Valideringen.kollatomRuta(username) &&Valideringen.Förstabokstavenpåagentnamn(username)){
            
            try {
                 String losenord= idb.fetchSingle(("SELECT Losenord from AGENT where namn = '" + användarnamn + "'"));

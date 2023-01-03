@@ -80,28 +80,16 @@ public class Valideringen {
         return kolla;
 }
     
-    //Validering som kontrollerar att rutan innehåller ett heltal.
-    public boolean kollaNummer(String rutacheck){
-        boolean svar = true;
-        
-        try{
-            Integer.parseInt(rutacheck);
-        } catch(NumberFormatException exception){
-            JOptionPane.showMessageDialog(null, "Ange ett heltal.");
-            svar = false;
-        }
-        
-        return svar;
-    }
+  
     
-   
-    public static boolean AgentNamn(JTextField rutaCheck){
-        String ruta = rutaCheck.getText();
-        if (ruta.startsWith("Agent")) {
+   // alla agenter ska börjas med A till ex Agent K, Agent Z och så vidare 
+    public static boolean Förstabokstavenpåagentnamn(JTextField kollarutan){
+        String j = kollarutan.getText();
+        if (j.startsWith("A")) {
             return true;    
             }
         else{
-            JOptionPane.showMessageDialog(null, "Vänligen ange ett korrekt Agent-namn.");
+            JOptionPane.showMessageDialog(null, "Vänligen skriv ett Agent som börjar med A bokstav, till exemple Agent K ");
              
                 return false;
         }
