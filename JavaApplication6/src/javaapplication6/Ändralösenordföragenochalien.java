@@ -169,7 +169,7 @@ private static InfDB idb;
              }
              
              
-             if( findoldpasswordforagent=true)
+             if( findoldpasswordforagent=true && Valideringen.losennord(newpasscode))
               try {
              
              
@@ -192,7 +192,7 @@ private static InfDB idb;
              }
              
              
-             if( findoldpasswordforalien=true)
+             if( findoldpasswordforalien=true && Valideringen.losennord(newpasscode))
               try {
              
              

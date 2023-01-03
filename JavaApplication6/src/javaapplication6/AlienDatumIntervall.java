@@ -118,7 +118,10 @@ ArrayList Intervall;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       try {
+      
+       if(Valideringen.datumm(jTextField1) && Valideringen.datumm(jTextField2)) {
+        
+        try {
         var F = jTextField1.getText();
         var T = jTextField2.getText();
         
@@ -128,7 +131,7 @@ ArrayList Intervall;
     } catch (InfException ex) {
         Logger.getLogger(AlienDatumIntervall.class.getName()).log(Level.SEVERE, null, ex);
     }
-
+       }
 
 
 

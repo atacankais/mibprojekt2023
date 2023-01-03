@@ -127,7 +127,7 @@ public class LoginAlien extends javax.swing.JFrame {
         
         
         
-         
+         if(Valideringen.kollatomRuta(username)){
             try {
              
                 String användarnamnalien = username.getText();
@@ -138,7 +138,7 @@ public class LoginAlien extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Vänligen försök igen ");
         }
        
-       
+         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

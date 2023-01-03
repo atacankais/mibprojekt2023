@@ -122,7 +122,11 @@ public class LoginAgent extends javax.swing.JFrame {
                String användarnamn = username.getText();
 
        {
-            try {
+            
+          if 
+              (Valideringen.kollatomRuta(username)){
+           
+           try {
                 String losenord= idb.fetchSingle(("SELECT Losenord from AGENT where namn = '" + användarnamn + "'"));
                 String adminstate= idb.fetchSingle(("Select Administrator from Agent where namn = '" + användarnamn + "'"));
 
@@ -140,15 +144,16 @@ public class LoginAgent extends javax.swing.JFrame {
                    
                 }
 
-
+           
                 
             } catch (InfException ettUndantag) {
                JOptionPane.showMessageDialog(null, "Nånting gick fel");
                 System.out.println("try again ");
             }
+          
+          }
        }
-
-       
+         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
