@@ -11,15 +11,13 @@ import oru.inf.InfException;
 
 /**
  *
- * @author ZIbra
+ *  
  */
 public class AdminÄndraAllAlienInfo extends javax.swing.JFrame {
     private static InfDB idb;
 
 
-    /**
-     * Creates new form AdminÄndraAllAlienInfo
-     */
+   
     public AdminÄndraAllAlienInfo() {
         initComponents();
          try {
@@ -194,7 +192,7 @@ public class AdminÄndraAllAlienInfo extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try{
-        String ändraAlienId = alienid.getText();
+        String ändraAlienId = alienid.getText(); //lokal variabel som blir tilldelad det som skrivs in i det tomma fältet
         var nyaid = nyid.getText();
         var nyaregdatum = nyregdatum.getText();
         String nyalösenord = nylösenord.getText();
@@ -207,8 +205,9 @@ public class AdminÄndraAllAlienInfo extends javax.swing.JFrame {
        idb.update("UPDATE alien SET Alien_ID = '" + nyaid + "', Registreringsdatum = '" + nyaregdatum + "', Losenord = '" + nyalösenord + "', Namn = '" + nyanamn + "', Telefon = '" + nyatelefon + "', Plats = '" + nyaplats + "', Ansvarig_Agent = '" + nyaansvarig + "' WHERE Alien_Id = '"+ ändraAlienId +"'");
 
         }
-        catch(InfException e) {
-            JOptionPane.showMessageDialog(null, "Ändringen gick inte igenom");
+        catch(InfException e) {      //catch nödvändig då den hanterar undantag
+
+            JOptionPane.showMessageDialog(null, "Ändringen gick inte igenom"); //ruta som visas för användaren //pop-up ruta 
             System.out.println("Någonting gick fel");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
