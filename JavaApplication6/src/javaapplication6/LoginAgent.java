@@ -122,7 +122,11 @@ public class LoginAgent extends javax.swing.JFrame {
                String användarnamn = username.getText();
 
        {
-            
+            // här användas validering för att säkerställa att rutan är ifylld och agent namn börjas med bokstaven A
+           // efter valideringen användas try för att loga in och sql query för att hämta data från dtabasen och kollar 
+           // om de stämmer överense med data som skrivs i rutan 
+           // i slutet användas catch för att visa felmedelande om något går fel 
+         
           if 
               (Valideringen.kollatomRuta(username) &&Valideringen.Förstabokstavenpåagentnamn(username)){
            
@@ -147,7 +151,7 @@ public class LoginAgent extends javax.swing.JFrame {
            
                 
             } catch (InfException ettUndantag) {
-               JOptionPane.showMessageDialog(null, "Nånting gick fel");
+               JOptionPane.showMessageDialog(null, " Fel Lösenord försök igen ");
                 System.out.println("try again ");
             }
           

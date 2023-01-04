@@ -9,13 +9,7 @@ import oru.inf.InfDB;
 import oru.inf.InfException;
 
 
-/**
- *
- * @author Pia Vargas, Amanda Demir
- * 
- * Valideringsklass
- * 
- */
+
 public class Valideringen {
     
     private static InfDB idb;
@@ -33,6 +27,7 @@ public class Valideringen {
         }
     }
     
+    // denna methoden användas för att säkerställa att rutan skall vara ifylld.
     
    
     public static boolean kollatomRuta (JTextField checkaRuta)
@@ -46,7 +41,8 @@ public class Valideringen {
         
         return kolla;
     }
-     
+      // denna method användas för att säkerställa att lösenordet skall vara stora än 3 och mindre än 100 
+    
    
     public static boolean losennord(String losenord){
        boolean kolla = false;
@@ -61,15 +57,15 @@ public class Valideringen {
         return kolla;
    }
     
-   
+    // denna method användas för att säkerställa att man skall använda rätt datumforamt
     public static boolean datumm(JTextField kollapådatum) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("YYYY-MM-DD");
+        SimpleDateFormat date = new SimpleDateFormat("YYYY-MM-DD");
         
         boolean kolla = false;
         
         String datum = kollapådatum.getText();
         try {
-            dateFormat.parse(datum);
+            date.parse(datum);
             kolla = true;
         } catch (ParseException e) {
             JOptionPane.showMessageDialog(null, " vänligen skriv så här  YYYY-MM-DD");

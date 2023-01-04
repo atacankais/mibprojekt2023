@@ -110,15 +110,12 @@ public class RaderaAlien extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         
-      
+      // 
          try {
           String AlienNAMN= aliennamn.getText();     
         Boolean delete=false; 
      
-         
-            //String gettingthealienNAMN= idb.fetchSingle(" SELECT NAMN FROM ALIEN");
-             
-             
+           
              String deletealien= " DELETE FROM ALIEN WHERE NAMN= '"+AlienNAMN+"'";
             
             delete=true;

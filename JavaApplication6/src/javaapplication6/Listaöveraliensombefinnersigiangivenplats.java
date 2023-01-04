@@ -107,7 +107,13 @@ ArrayList namnpåalien;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    try {
+   
+     // här användas try och sen en string varible som sparar data som skrivas i rutan, efter användas 
+     // arraylisten för att fetcha en colum från databasen 
+     // i slutet finns det catch för att visa felmedelnade.
+        
+        
+        try {
         // TODO add your handling code here:
         
         String benmaning=    ortnamn.getText();
@@ -116,7 +122,7 @@ ArrayList namnpåalien;
             
           JOptionPane.showMessageDialog(null,"Dessa aliens  befinner sig i denna plats:"+ namnpåalien+ "");
     } catch (InfException ex) {
-        JOptionPane.showMessageDialog(null, "Någonting gick fel");
+        JOptionPane.showMessageDialog(null, "Området finns inte i vår databas");
         Logger.getLogger(Listaöveraliensombefinnersigiangivenplats.class.getName()).log(Level.SEVERE, null, ex);
     }
         
