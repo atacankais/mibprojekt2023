@@ -10,7 +10,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author atacankais
+ * @author 
  */
 public class ÄndraOmrådesChef extends javax.swing.JFrame {
 private static InfDB idb;
@@ -113,14 +113,14 @@ private static InfDB idb;
         
         try{
             
-        var omradeid = omrid.getText();
+        var omradeid = omrid.getText(); //lokal varibel för det som skrivit in i turan som är namngiven omrid
         var agid = agentid.getText();
         
-       idb.update("UPDATE omradeschef SET Agent_ID = '" + agid + "' WHERE Omrade = '"+ omradeid +"'");
+       idb.update("UPDATE omradeschef SET Agent_ID = '" + agid + "' WHERE Omrade = '"+ omradeid +"'"); 
 
         }
         catch(Exception e) {
-           JOptionPane.showMessageDialog(null, "Någonting gick fel");
+           JOptionPane.showMessageDialog(null, "Någonting gick fel"); //pop-up ruta
            System.out.println("Nånting gick fel");
         }
     }//GEN-LAST:event_jButton1ActionPerformed

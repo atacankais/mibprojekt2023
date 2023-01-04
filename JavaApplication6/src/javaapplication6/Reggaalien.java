@@ -12,7 +12,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author jafar
+ * @author 
  */
 public class Reggaalien extends javax.swing.JFrame {
      public static InfDB idb;
@@ -22,8 +22,7 @@ public class Reggaalien extends javax.swing.JFrame {
      * 
      * 
      * 
-     *  fråga till lärare; 
-     * varför får jag fel medelande när jag skapar konstrukter med db; 
+     *  
      * 
      * 
      * 
@@ -233,7 +232,7 @@ public class Reggaalien extends javax.swing.JFrame {
              + getnexgtalien() + ", '"
              + registerationdatum.getText() + "', '"
              + lösenordet.getText() + "', '"
-             + aliennamn.getText() + " ','"
+             + aliennamn.getText() + " ','" //anropar texten som använderen skriver in i rutan med metoden getText
              + telefon.getText()+"',"
              + alienområde+","
              + denansvarigagenttillalien +")";
@@ -243,7 +242,7 @@ public class Reggaalien extends javax.swing.JFrame {
          } catch (InfException ex) {
              Logger.getLogger(Reggaalien.class.getName()).log(Level.SEVERE, null, ex);
              JOptionPane.showMessageDialog(null, "Någonting gick fel");
-             System.out.println(" Något gick fel");
+             System.out.println(" Någoting gick fel");
          }
         
                 

@@ -10,7 +10,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author ZIbra
+ * @author 
  */
 public class TaBortUtrustning extends javax.swing.JFrame {
 private static InfDB idb;
@@ -97,11 +97,11 @@ private static InfDB idb;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String utnamn = utrnamn.getText();
         try {
-            idb.delete("DELETE FROM utrustning WHERE Benamning = '" + utnamn + "'");
+            idb.delete("DELETE FROM utrustning WHERE Benamning = '" + utnamn + "'"); //använder varibeln utnamn i frågan
 
         }
         catch(InfException e) {
-            JOptionPane.showMessageDialog(null, "Utrustningen finns inte");   
+            JOptionPane.showMessageDialog(null, "Utrustningen finns inte");   //undantag kastas
             System.out.println("Nånting gick fel");
         }
 

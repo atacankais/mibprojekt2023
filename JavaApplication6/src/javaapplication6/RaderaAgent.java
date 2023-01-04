@@ -11,7 +11,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author jafar
+ * @author 
  */
 public class RaderaAgent extends javax.swing.JFrame {
 private static InfDB idb;
@@ -93,7 +93,7 @@ private static InfDB idb;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
-        // här använder jag varaible name för att köra sql query , sayed
+        // här använder jag varibel namn för att köra sql query , sayed
         
      //   String name= ( " select Namn from agent"); 
         

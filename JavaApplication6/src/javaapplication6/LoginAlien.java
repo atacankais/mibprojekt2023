@@ -14,7 +14,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author jafar
+ * @author 
  */
 public class LoginAlien extends javax.swing.JFrame {
  static InfDB idb;
@@ -88,11 +88,10 @@ public class LoginAlien extends javax.swing.JFrame {
                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(154, 154, 154)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(145, 145, 145)
-                        .addComponent(jLabel3)))
-                .addContainerGap(167, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jButton1))))
+                .addContainerGap(163, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,7 +126,7 @@ public class LoginAlien extends javax.swing.JFrame {
         
         
         
-         if(Valideringen.kollatomRuta(username)){
+         if(Valideringen.kollatomRuta(username)){ //kontroll, använder validering klassen
             try {
              
                 String användarnamnalien = username.getText();

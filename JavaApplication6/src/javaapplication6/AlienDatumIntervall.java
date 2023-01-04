@@ -13,7 +13,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author kristinamalki
+ * @author 
  */
 public class AlienDatumIntervall extends javax.swing.JFrame {
 public static InfDB idb; 
@@ -25,7 +25,7 @@ ArrayList Intervall;
     public AlienDatumIntervall() {
         initComponents();
 
-          Intervall = new ArrayList<String> ();
+          Intervall = new ArrayList<String> (); //namnger min lista
          try {
            idb = new InfDB("mibdb", "3306", "mibdba", "mibkey");
         } catch (InfException ex) {
@@ -122,12 +122,12 @@ ArrayList Intervall;
        if(Valideringen.datumm(jTextField1) && Valideringen.datumm(jTextField2)) {
         
         try {
-        var F = jTextField1.getText();
+        var F = jTextField1.getText(); //varibel för texten som skrivs in i rutan av användaren
         var T = jTextField2.getText();
         
         Intervall = idb.fetchColumn("SELECT namn FROM alien WHERE registreringsdatum >= '" + F + "' AND registreringsdatum <= '" + T + "'");
-            
-          JOptionPane.showMessageDialog(null,"De aliens som är registerade inom detta intervaller är:" + Intervall);
+            //sql fråga 
+          JOptionPane.showMessageDialog(null,"De aliens som är registerade inom detta intervaller är:" + Intervall); //utskriften för användaren 
     } catch (InfException ex) {
         Logger.getLogger(AlienDatumIntervall.class.getName()).log(Level.SEVERE, null, ex);
     }

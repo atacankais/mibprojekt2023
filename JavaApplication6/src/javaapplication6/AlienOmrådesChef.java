@@ -10,7 +10,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author ZIbra
+ * @author 
  */
 public class AlienOmrådesChef extends javax.swing.JFrame {
 private static InfDB idb;
@@ -95,7 +95,7 @@ private static InfDB idb;
            
            try{
            var oid = omid.getText();
-           String agid = idb.fetchSingle("SELECT Agent_ID from omradeschef WHERE omrade =" + oid +"");
+           String agid = idb.fetchSingle("SELECT Agent_ID from omradeschef WHERE omrade =" + oid +""); //select frågor som tilldelas en variabel som sedan används i utskriften
            String agnamn = idb.fetchSingle("SELECT Namn FROM agent where Agent_ID = '" + agid + "'");
            var tel = idb.fetchSingle("SELECT Telefon FROM Agent where Agent_ID = '" + agid + "'");
            var plat = idb.fetchSingle("SELECT Omrade FROM Agent where Agent_ID = '" + agid + "'");
@@ -104,8 +104,8 @@ private static InfDB idb;
 
             }
            catch(InfException a) {
-           JOptionPane.showMessageDialog(null, "Någnting gick fel");   
-           System.out.println("Någnting gick fel");
+           JOptionPane.showMessageDialog(null, "Någonting gick fel");   
+           System.out.println("Någonting gick fel"); //internt meddelande
         }
 
     }//GEN-LAST:event_chefActionPerformed

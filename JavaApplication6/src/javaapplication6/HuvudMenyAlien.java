@@ -6,7 +6,7 @@ package javaapplication6;
 
 /**
  *
- * @author atacankais
+ * @author 
  */
 public class HuvudMenyAlien extends javax.swing.JFrame {
 
@@ -24,7 +24,7 @@ public class HuvudMenyAlien extends javax.swing.JFrame {
         k.setVisible(true);
         }
         
-        public void visaChef(){
+        public void visaChef(){ //anrop
         
         AlienOmrådesChef a = new AlienOmrådesChef();
         a.setVisible(true);

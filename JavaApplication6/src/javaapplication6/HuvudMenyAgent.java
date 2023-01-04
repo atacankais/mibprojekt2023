@@ -9,7 +9,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author atacankais
+ * @author 
  */
 public class HuvudMenyAgent extends javax.swing.JFrame {
  private static InfDB idb;
@@ -32,7 +32,7 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
     
        
 
-    public void oppenändralösnordmeny(){
+    public void oppenändralösnordmeny(){ //anrop till annan kod
         
         Ändralösenordföragenochalien k= new Ändralösenordföragenochalien();
         k.setVisible(true);
@@ -241,7 +241,7 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-      SökAlienInfo();
+      SökAlienInfo(); //knappen tilldelas en meotd
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed

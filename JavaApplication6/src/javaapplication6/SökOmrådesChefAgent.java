@@ -10,7 +10,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author kristinamalki
+ * @author 
  */
 public class SökOmrådesChefAgent extends javax.swing.JFrame {
 private static InfDB idb;
@@ -93,9 +93,9 @@ private static InfDB idb;
 
     private void sökActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sökActionPerformed
         try {  
-          var omid = omrid.getText();
+          var omid = omrid.getText(); //hämtar texten i rutan
           var id = idb.fetchSingle("SELECT Agent_ID FROM Omradeschef where Omrade = '" + omid + "'");
-          var agnamn = idb.fetchSingle("SELECT Namn FROM agent where Agent_ID = '" + id + "'");
+          var agnamn = idb.fetchSingle("SELECT Namn FROM agent where Agent_ID = '" + id + "'"); //frågrona är beronde av avranarda därav varibler
 
          
           JOptionPane.showMessageDialog(null, "Områdeschef: " + agnamn + "");

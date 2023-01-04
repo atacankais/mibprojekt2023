@@ -10,7 +10,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author jafar
+ * @author 
  */
 public class StartaApplikationen extends javax.swing.JFrame {
    public static InfDB idb; 
@@ -37,7 +37,7 @@ public class StartaApplikationen extends javax.swing.JFrame {
     appp.setVisible(true);
     }
      
-     public void oppnaaliensida(){
+     public void oppnaaliensida(){ //anrop
          LoginAlien hh= new LoginAlien (); 
          hh.setVisible(true);
      }

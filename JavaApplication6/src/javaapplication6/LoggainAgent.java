@@ -10,7 +10,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author jafar
+ * @author 
  */
 public class LoggainAgent extends javax.swing.JFrame {
  public static InfDB idb; 
@@ -93,12 +93,10 @@ public class LoggainAgent extends javax.swing.JFrame {
                 .addGap(70, 70, 70))
             .addGroup(layout.createSequentialGroup()
                 .addGap(156, 156, 156)
-                .addComponent(jButton1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jButton1))
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(148, 148, 148)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,14 +122,15 @@ public class LoggainAgent extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
 
-               String användarnamn = username.getText();
+               String användarnamn = username.getText(); //lokal variabel som blir tilldelad det som skrivs in i det tomma fältet
+
 
        {
             try {
-                String losenord= idb.fetchSingle(("SELECT Losenord from AGENT where namn = '" + användarnamn + "'"));
+                String losenord= idb.fetchSingle(("SELECT Losenord from AGENT where namn = '" + användarnamn + "'")); //meotden fetchSingle för att skriva en select fråga //tilldelas en variabel
                 String adminstate= idb.fetchSingle(("Select Administrator from Agent where namn = '" + användarnamn + "'"));
 
-                if ( adminstate.equals("N")) {
+                if ( adminstate.equals("N")) { //vilkor 
                 
                     System.out.println(" Agent inloggad ");
                     oppenmeny();
@@ -148,7 +147,7 @@ public class LoggainAgent extends javax.swing.JFrame {
 
                 
             } catch (InfException ettUndantag) {
-               JOptionPane.showMessageDialog(null, "Någonting gick fel");
+               JOptionPane.showMessageDialog(null, "Någonting gick fel, vänligen försök igen!");
                 System.out.println("Vänligen försök igen ");
             }
        }

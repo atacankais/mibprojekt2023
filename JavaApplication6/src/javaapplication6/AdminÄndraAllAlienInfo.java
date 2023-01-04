@@ -4,7 +4,7 @@
  */
 package javaapplication6;
 
-import javax.swing.JOptionPane;
+import javax.swing.JOptionPane; //importerar denna för att kunna använda metoden JOptionPane
 import oru.inf.InfDB;
 import oru.inf.InfException;
 

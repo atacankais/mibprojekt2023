@@ -11,7 +11,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author kristinamalki
+ * @author 
  */
 public class SökAlienInfo extends javax.swing.JFrame {
 private static InfDB idb;
@@ -95,9 +95,9 @@ private static InfDB idb;
 
     private void väljAlienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_väljAlienActionPerformed
          try {  
-          var alienid = alid.getText();
+          var alienid = alid.getText(); //lokal varibel
           var id = idb.fetchSingle("SELECT Alien_ID FROM Alien where Alien_ID = '" + alienid + "'");
-          String namn = idb.fetchSingle("SELECT Namn FROM Alien where Alien_ID = '" + alienid + "'");
+          String namn = idb.fetchSingle("SELECT Namn FROM Alien where Alien_ID = '" + alienid + "'"); //fetchSingel metoden för att sqlfråga
           var reg = idb.fetchSingle("SELECT Registreringsdatum FROM Alien where Alien_ID = '" + alienid + "'");
           var losen = idb.fetchSingle("SELECT Losenord FROM Alien where Alien_ID = '" + alienid + "'");
           var tel = idb.fetchSingle("SELECT Telefon FROM Alien where Alien_ID = '" + alienid + "'");
@@ -107,7 +107,7 @@ private static InfDB idb;
           JOptionPane.showMessageDialog(null, "ID: " + id + "\nNamn: " + namn + "\nRegistreringsdatum: " + reg + "\nLösenord: " + losen + "\nTelefon: " + tel + "\nPlats: " + plat + "\nAnsvarig agent: " + ansvarig + "");
          }
          catch(InfException a) {
-           JOptionPane.showMessageDialog(null, "Någonting gick fel");   
+           JOptionPane.showMessageDialog(null, "Någonting gick fel");   //om undantag kastas
            System.out.println("Någonting gick fel");
         }
             

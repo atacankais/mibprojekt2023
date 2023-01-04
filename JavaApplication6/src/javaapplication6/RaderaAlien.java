@@ -12,7 +12,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author jafar
+ * @author 
  */
 public class RaderaAlien extends javax.swing.JFrame {
 
@@ -116,16 +116,16 @@ public class RaderaAlien extends javax.swing.JFrame {
         Boolean delete=false; 
      
            
-             String deletealien= " DELETE FROM ALIEN WHERE NAMN= '"+AlienNAMN+"'";
+             String deletealien= " DELETE FROM ALIEN WHERE NAMN= '"+AlienNAMN+"'"; //varibel
             
             delete=true;
-             if(delete=true ){
-                                   String complatedelete=idb.fetchSingle(deletealien);
+             if(delete=true ){ //vilkor
+                                   String complatedelete=idb.fetchSingle(deletealien); //använder varibeln ovan
 
                  System.out.println(" En alien har nu tagits bort från systemet"+ complatedelete);
              }
              
-         } catch (InfException ex) {
+         } catch (InfException ex) { //om undantag kastas
              
             JOptionPane.showMessageDialog(null, "Någonting gick fel");
              System.out.println(" Något gick fel, vänligen försök igen");

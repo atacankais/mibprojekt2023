@@ -10,7 +10,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author ZIbra
+ * @author 
  */
 public class TaBortAgent extends javax.swing.JFrame {
 private static InfDB idb;
@@ -60,10 +60,6 @@ private static InfDB idb;
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(138, 138, 138)
-                .addComponent(jLabel2)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(106, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -76,13 +72,17 @@ private static InfDB idb;
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(94, 94, 94))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(141, 141, 141)
+                .addComponent(jLabel2)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(26, 26, 26)
                 .addComponent(jLabel2)
-                .addGap(38, 38, 38)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(agentnamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -95,13 +95,13 @@ private static InfDB idb;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      String agent = agentnamn.getText();
+      String agent = agentnamn.getText(); //hämtar text
       try {
             idb.delete("DELETE FROM Agent WHERE Namn = '" + agent + "'");
 
       } 
       catch(InfException e) {
-           JOptionPane.showMessageDialog(null, "Agenten finns inte");   
+           JOptionPane.showMessageDialog(null, "Agenten finns inte");   //utskrift vid undatget därav catch
            System.out.println("Nånting gick fel");
           
       }

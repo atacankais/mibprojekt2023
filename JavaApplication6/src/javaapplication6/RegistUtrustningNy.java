@@ -10,7 +10,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author ZIbra
+ * @author 
  */
 public class RegistUtrustningNy extends javax.swing.JFrame {
 private InfDB idb;
@@ -105,14 +105,14 @@ private InfDB idb;
             
         try { 
               String Insert = "INSERT INTO Utrustning VALUES("
-                 + utid.getText()+ ", '"
+                 + utid.getText()+ ", '" //metoden ger tillgång till texten i rutan som går efter namnet utid
                  + utben.getText() + "')";
               idb.insert(Insert);
               JOptionPane.showMessageDialog(null, "Ny utrustning registrerades");
              // idb.insert("INSERT INTO Utrustning(Utrustning_ID, Benamning) VALUES('"+id+"', '"+utnamn+"')");
 
           } 
-          catch(InfException e) {
+          catch(InfException e) { //om undtag kastas
            JOptionPane.showMessageDialog(null, "Registreringen gick inte igenom, pröva igen!");     
 
           }

@@ -10,7 +10,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author ZIbra
+ * @author 
  */
 public class SökAgentInfo extends javax.swing.JFrame {
 private static InfDB idb;
@@ -94,7 +94,7 @@ private static InfDB idb;
     private void letaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letaActionPerformed
        try {  
           var ageid = agid.getText();
-          var id = idb.fetchSingle("SELECT Agent_ID FROM Agent where Agent_ID = '" + ageid + "'");
+          var id = idb.fetchSingle("SELECT Agent_ID FROM Agent where Agent_ID = '" + ageid + "'"); //metod för att skriva sql fråga
           String namn = idb.fetchSingle("SELECT Namn FROM Agent where Agent_ID = '" + ageid + "'");
           var ansdatum = idb.fetchSingle("SELECT Anstallningsdatum FROM Agent where Agent_ID = '" + ageid + "'");
           var losen = idb.fetchSingle("SELECT Losenord FROM Agent where Agent_ID = '" + ageid + "'");
@@ -103,9 +103,9 @@ private static InfDB idb;
           var admin = idb.fetchSingle("SELECT Administrator FROM Agent where Agent_ID = '" + ageid + "'");
 
           JOptionPane.showMessageDialog(null, "ID: " + id + "\nNamn: " + namn + "\nAnställningsdatum: " + ansdatum + "\nLösenord: " + losen + "\nTelefon: " + tel + "\nOmråde: " + plat + "\nAdministratör: " + admin + "");
-         }
+         } //utskriften för användaren 
          catch(InfException a) {
-           JOptionPane.showMessageDialog(null, "Någonting gick fel");   
+           JOptionPane.showMessageDialog(null, "Någonting gick fel");   //utskriften när undantag kastas
            System.out.println("Någonting gick fel");
         }
     }//GEN-LAST:event_letaActionPerformed

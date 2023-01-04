@@ -13,7 +13,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author jafar
+ * @author 
  */
 public class Reggaagent extends javax.swing.JFrame {
  private static InfDB db;
@@ -196,7 +196,7 @@ public class Reggaagent extends javax.swing.JFrame {
          
         
          
-         // observera att Agent id genereras automatiskt så man behöver inte skriva den manualt när man fyller i formen. Sayed
+         // Observera att Agent id genereras automatiskt så man behöver inte skriva den manuelt när man fyller i formen. 
          
 
                  

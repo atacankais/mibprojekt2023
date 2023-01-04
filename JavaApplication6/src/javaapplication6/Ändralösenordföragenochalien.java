@@ -14,7 +14,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author jafar
+ * @author 
  */
 public class Ändralösenordföragenochalien extends javax.swing.JFrame {
 private static InfDB idb;

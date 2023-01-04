@@ -9,7 +9,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author atacankais
+ * @author 
  */
 public class HuvudMenyAdmin extends javax.swing.JFrame {
 private InfDB idb;
@@ -27,7 +27,7 @@ private InfDB idb;
     }
     
      public void reggaAgent() {
-        Reggaagent b = new Reggaagent();
+        Reggaagent b = new Reggaagent(); //anropar annan kod i annan klass
         b.setVisible(true);
     }
     
@@ -302,7 +302,7 @@ private InfDB idb;
     }//GEN-LAST:event_RaderaAlienActionPerformed
 
     private void ÄndraLösenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ÄndraLösenActionPerformed
-        oppenändralösnordmenyföradmin(); // kallar metoden för att öppan ändralösenord rutan för admin    
+        oppenändralösnordmenyföradmin(); // kallar metoden för att öppna ändralösenord rutan för admin    
     }//GEN-LAST:event_ÄndraLösenActionPerformed
 
     private void LoggaUtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoggaUtActionPerformed

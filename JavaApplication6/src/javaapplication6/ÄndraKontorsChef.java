@@ -10,7 +10,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author atacankais
+ * @author 
  */
 public class ÄndraKontorsChef extends javax.swing.JFrame {
 private static InfDB idb;
@@ -112,13 +112,13 @@ private static InfDB idb;
     private void ändraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ändraActionPerformed
         try{
             
-        var nykontor = kontor.getText();
+        var nykontor = kontor.getText(); //varibel som sedan nyttjas i sql frågan
         var nychef = nykchef.getText();
         
        idb.update("UPDATE kontorschef SET Agent_ID = '" + nychef + "' WHERE Kontorsbeteckning = '"+ nykontor +"'");
 
         }
-        catch(Exception e) {
+        catch(Exception e) { //catch och try för undantag 
             JOptionPane.showMessageDialog(null, "Någonting gick fel");   
             System.out.println("Nånting gick fel");
             

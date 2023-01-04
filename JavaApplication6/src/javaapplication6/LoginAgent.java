@@ -10,7 +10,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author jafar
+ * @author 
  */
 public class LoginAgent extends javax.swing.JFrame {
  public static InfDB idb; 
@@ -53,26 +53,27 @@ public class LoginAgent extends javax.swing.JFrame {
         userpasscode = new javax.swing.JPasswordField();
         LBpassword = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         username.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        LBagentID.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         LBagentID.setText("Namn:");
 
         userpasscode.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        LBpassword.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         LBpassword.setText("Lösenord:");
 
-        jButton1.setBackground(new java.awt.Color(51, 51, 255));
-        jButton1.setText("Login");
+        jButton1.setText("Logga in");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+
+        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        jLabel1.setText("Inloggning");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,35 +83,40 @@ public class LoginAgent extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(LBagentID)
-                        .addGap(47, 47, 47)
-                        .addComponent(username, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
-                        .addGap(154, 154, 154))
-                    .addGroup(layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(LBpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(userpasscode, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(71, 71, 71)
-                                .addComponent(jButton1)))
+                            .addComponent(LBpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LBagentID))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(userpasscode, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                            .addComponent(username))
+                        .addGap(71, 71, 71))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addComponent(jButton1)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(146, 146, 146)
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LBagentID)
-                    .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LBpassword)
-                    .addComponent(userpasscode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
+                .addGap(30, 30, 30)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(username, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LBagentID, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(userpasscode, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LBpassword, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(37, 37, 37)
                 .addComponent(jButton1)
-                .addContainerGap(145, Short.MAX_VALUE))
+                .addGap(73, 73, 73))
         );
 
         pack();
@@ -151,7 +157,7 @@ public class LoginAgent extends javax.swing.JFrame {
            
                 
             } catch (InfException ettUndantag) {
-               JOptionPane.showMessageDialog(null, " Fel Lösenord försök igen ");
+               JOptionPane.showMessageDialog(null, " Fel lösenord, vänligen försök igen ");
                 System.out.println("try again ");
             }
           
@@ -200,6 +206,7 @@ public class LoginAgent extends javax.swing.JFrame {
     private javax.swing.JLabel LBagentID;
     private javax.swing.JLabel LBpassword;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField username;
     private javax.swing.JPasswordField userpasscode;
     // End of variables declaration//GEN-END:variables

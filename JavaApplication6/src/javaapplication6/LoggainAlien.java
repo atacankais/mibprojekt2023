@@ -14,7 +14,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author jafar
+ * @author 
  */
 public class LoggainAlien extends javax.swing.JFrame {
  static InfDB idb;
@@ -116,12 +116,12 @@ public class LoggainAlien extends javax.swing.JFrame {
        
             try {
              
-                String användarnamnalien = username.getText();
+                String användarnamnalien = username.getText(); //hämtas det som skrivits in i rutan
                 String losenord = idb.fetchSingle(("SELECT Losenord from ALIEN where namn= '"+ användarnamnalien+"'"));
                 System.out.println("Du är nu inloggad");
                  alienmenyy();
        } catch (InfException ettUndantag) { 
-            JOptionPane.showMessageDialog(null, "Någonting gick fel");
+            JOptionPane.showMessageDialog(null, "Någonting gick fel, vänligen försök igen.");
         }
        
        

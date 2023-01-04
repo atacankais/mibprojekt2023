@@ -10,7 +10,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author atacankais
+ * @author 
  */
 public class TilldelaAdminStatus extends javax.swing.JFrame {
 private static InfDB idb;
@@ -96,12 +96,12 @@ private static InfDB idb;
         String agentnamn = agnamn.getText();
         
         try{
-            idb.update("UPDATE Agent SET Administrator = 'J' WHERE namn = '" + agentnamn + "'");
-            JOptionPane.showMessageDialog(null, agentnamn + " är nu admin.");   
+            idb.update("UPDATE Agent SET Administrator = 'J' WHERE namn = '" + agentnamn + "'"); //anvönder varibeln agentnamn som har blivit tilldelad det som användaren skriver i rutan
+            JOptionPane.showMessageDialog(null, agentnamn + " är nu admin.");   //utskriften för användaren 
 
         }
         catch(InfException e) {
-           JOptionPane.showMessageDialog(null, "Någnting gick fel");   
+           JOptionPane.showMessageDialog(null, "Någnting gick fel");   //undatag kastas, detta skrivs ut för användaren
            System.out.println("Nånting gick fel");
         }
         

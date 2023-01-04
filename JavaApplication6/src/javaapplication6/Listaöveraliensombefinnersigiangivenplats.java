@@ -13,7 +13,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author jafar
+ * @author 
  */
 public class Listaöveraliensombefinnersigiangivenplats extends javax.swing.JFrame {
 public static InfDB idb; 
@@ -25,7 +25,7 @@ ArrayList namnpåalien;
         initComponents();
         
         
-          namnpåalien= new ArrayList<String> ();
+          namnpåalien= new ArrayList<String> (); //namnget listan
          try {
            idb = new InfDB("mibdb", "3306", "mibdba", "mibkey");
         } catch (InfException ex) {
@@ -110,7 +110,7 @@ ArrayList namnpåalien;
    
      // här användas try och sen en string varible som sparar data som skrivas i rutan, efter användas 
      // arraylisten för att fetcha en colum från databasen 
-     // i slutet finns det catch för att visa felmedelnade.
+     // i slutet finns det catch för att visa felmeddlanden.
         
         
         try {

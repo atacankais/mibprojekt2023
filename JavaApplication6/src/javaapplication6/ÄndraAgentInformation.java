@@ -10,7 +10,7 @@ import oru.inf.InfException;
 
 /**
  *
- * @author ZIbra
+ * @author 
  */
 public class ÄndraAgentInformation extends javax.swing.JFrame {
       private static InfDB idb;
@@ -147,7 +147,7 @@ public class ÄndraAgentInformation extends javax.swing.JFrame {
 
     private void ändraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ändraActionPerformed
         
-        var agentid = agid.getText();
+        var agentid = agid.getText(); //hämtas texten i rutorna 
         var nyttnamn = nynamn.getText();
         var nyttomr = nyomr.getText();
         var nyatel = nytel.getText();
@@ -155,11 +155,11 @@ public class ÄndraAgentInformation extends javax.swing.JFrame {
         try {
             
             idb.update("UPDATE agent SET Namn = '" + nyttnamn + "', Omrade = '" + nyttomr + "', Telefon = '" + nyatel + "' WHERE Agent_ID = '"+ agentid +"'");     
-        }
+        } 
 
         catch(InfException e) {
-            JOptionPane.showMessageDialog(null, "Någonting gick fel");   
-            System.out.println("Nånting gick fel");
+            JOptionPane.showMessageDialog(null, "Någonting gick fel");   //undantag kastas
+            System.out.println("Nånting gick fel"); //internt meddelande
         }
     }//GEN-LAST:event_ändraActionPerformed
 
