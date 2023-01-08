@@ -128,11 +128,13 @@ public class LoginAlien extends javax.swing.JFrame {
         
          if(Valideringen.kollatomRuta(username)){ //kontroll, använder validering klassen
             try {
-             
+             String passcode=userpasscode.getText();
                 String användarnamnalien = username.getText();
                 String losenord = idb.fetchSingle(("SELECT Losenord from ALIEN where namn= '"+ användarnamnalien+"'"));
                 System.out.println("Du är nu inloggad");
+                if (passcode.equals(losenord)){
                  alienmenyy();
+                }
        } catch (InfException ettUndantag) { 
             JOptionPane.showMessageDialog(null, "Vänligen försök igen ");
         }
