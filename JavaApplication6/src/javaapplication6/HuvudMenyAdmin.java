@@ -88,6 +88,12 @@ private InfDB idb;
         RaderaAgent system= new RaderaAgent();
         system.setVisible(true);
     }
+    
+    private void Reistereraenalienisystemetttt(){
+        Registreraenalienisystemet alienn = new Registreraenalienisystemet();
+          alienn.setVisible(true);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -267,8 +273,8 @@ private InfDB idb;
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
-                        .addContainerGap(19, Short.MAX_VALUE))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
+                        .addContainerGap(73, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(ÄndraAgentInfo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -290,7 +296,7 @@ private InfDB idb;
     }// </editor-fold>//GEN-END:initComponents
 
     private void RegAlienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegAlienActionPerformed
-        oppnaalienreg(); //KLAR
+         Reistereraenalienisystemetttt();
     }//GEN-LAST:event_RegAlienActionPerformed
 
     private void RegAgentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegAgentActionPerformed
