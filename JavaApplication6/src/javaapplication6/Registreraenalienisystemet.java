@@ -221,17 +221,17 @@ public class Registreraenalienisystemet extends javax.swing.JFrame {
           
          
          if(jComboBox1.getSelectedItem()==("Boglodite") ){
-             idb.insert("INSERT INTO Alien (Alien_ID, Registreringsdatum, Losenord, Namn, Telefon, Plats, Ansvarig_Agent) VALUES('" + nextId + "','" + Date +"','" + Losenordet +"','" + namn +"','" + telefonummer +"','" + platsen + "','" + Ansvarigagent+"')");
+             idb.insert("INSERT INTO Alien  VALUES('" + nextId + "','" + Date +"','" + Losenordet +"','" + namn +"','" + telefonummer +"','" + platsen + "','" + Ansvarigagent+"')");
              idb.insert("Insert Into Boglodite (Alien_ID) VALUES(" + nextId +")");
                 JOptionPane.showMessageDialog(null, " Du har registererat en alien i systemet med id  "+ nextId);
          }
          else if(jComboBox1.getSelectedItem()==("Squid") ){
-            idb.insert("INSERT INTO Alien (Alien_ID, Registreringsdatum, Losenord, Namn, Telefon, Plats, Ansvarig_Agent) VALUES('" + nextId + "','" + Date +"','" + Losenordet +"','" + namn +"','" + telefonummer +"','" + platsen+ "','" + Ansvarigagent +"')");
+            idb.insert("INSERT INTO Alien  VALUES('" + nextId + "','" + Date +"','" + Losenordet +"','" + namn +"','" + telefonummer +"','" + platsen+ "','" + Ansvarigagent +"')");
             idb.insert("Insert Into Squid (Alien_ID) VALUES(" + nextId  +")"); 
              JOptionPane.showMessageDialog(null, " Du har registererat en alien i systemet med id  "+ nextId);
          }
          else if(jComboBox1.getSelectedItem()==("Worm") ){
-             idb.insert("INSERT INTO Alien (Alien_ID, Registreringsdatum, Losenord, Namn, Telefon, Plats, Ansvarig_Agent) VALUES('" + nextId + "','" + Date +"','" + Losenordet +"','" + namn +"','" + telefonummer +"','" + platsen + "','" + Ansvarigagent +"')");
+             idb.insert("INSERT INTO Alien VALUES('" + nextId + "','" + Date +"','" + Losenordet +"','" + namn +"','" + telefonummer +"','" + platsen + "','" + Ansvarigagent +"')");
              idb.insert("Insert Into Worm VALUES(" + nextId +")");
               JOptionPane.showMessageDialog(null, " Du har registererat en alien i systemet med id  "+ nextId);
          }
