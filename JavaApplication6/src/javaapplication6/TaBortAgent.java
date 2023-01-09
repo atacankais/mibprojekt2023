@@ -98,6 +98,7 @@ private static InfDB idb;
       String agent = agentnamn.getText(); //hämtar text
       try {
             idb.delete("DELETE FROM Agent WHERE Namn = '" + agent + "'");
+              JOptionPane.showMessageDialog(null, "Agenten "+ agent+ "är borttagit");  
 
       } 
       catch(InfException e) {

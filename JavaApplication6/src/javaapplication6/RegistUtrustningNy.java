@@ -126,14 +126,14 @@ private InfDB idb;
             }
 
             if (lista=="Kommunikation") {
-                String insertKommunikation = "Insert into mibdb.Kommunikation (utrustnings_id) "
+                String insertKommunikation = "Insert into Kommunikation (utrustnings_id) "
                         + "values ( '"  + utid+ ")";
                 idb.insert(insertKommunikation);
 
             }
 
             if (lista=="Vapen") {
-                String insertVapen = "Insert into mibdb.Vapen (kaliber, utrustnings_id) "
+                String insertVapen = "Insert into mibdb.Vapen (utrustnings_id) "
                         + "values ( '"  + utid+ ")";
                 idb.insert(insertVapen);
 
