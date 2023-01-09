@@ -97,8 +97,11 @@ private static InfDB idb;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String utnamn = utrnamn.getText();
         try {
-            idb.delete("DELETE FROM utrustning WHERE Benamning = '" + utnamn + "'"); //använder varibeln utnamn i frågan
+        //var I = idb.fetchSingle("SELECT Utrustnings_ID FROM Utrustning where namn = '" + utnamn + "'");
 
+       idb.delete("DELETE FROM utrustning WHERE Benamning = '" + utnamn + "'"); //använder varibeln utnamn i frågan
+           // idb.delete("DELETE FROM Kommunikation WHERE Utrustning_ID = '" + I + "'");
+           // idb.delete("DELETE FROM Vapen WHERE Utrustning_ID = '" + I + "'");
         }
         catch(InfException e) {
             JOptionPane.showMessageDialog(null, "Utrustningen finns inte");   //undantag kastas
