@@ -99,8 +99,10 @@ private static InfDB idb;
            String agnamn = idb.fetchSingle("SELECT Namn FROM agent where Agent_ID = '" + agid + "'");
            var tel = idb.fetchSingle("SELECT Telefon FROM Agent where Agent_ID = '" + agid + "'");
            var plat = idb.fetchSingle("SELECT Omrade FROM Agent where Agent_ID = '" + agid + "'");
+           String ben = idb.fetchSingle("SELECT Benamning FROM Omrade where Omrades_ID = '" + oid + "'");
+
            
-           JOptionPane.showMessageDialog(null, "Namn: " + agnamn +  "\nTelefon: " + tel + "\nOmråde: " + plat + "");
+           JOptionPane.showMessageDialog(null, "Namn: " + agnamn +  "\nTelefon: " + tel + "\nOmråde: " + plat + "\nBenamning: " + ben);
 
             }
            catch(InfException a) {
