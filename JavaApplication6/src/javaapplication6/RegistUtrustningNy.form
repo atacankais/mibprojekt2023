@@ -38,7 +38,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
-                      <Component id="lista" min="-2" max="-2" attributes="0"/>
+                      <Component id="k" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -84,7 +84,7 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                      <Component id="lista" min="-2" max="-2" attributes="0"/>
+                      <Component id="k" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -140,7 +140,7 @@
         <Property name="text" type="java.lang.String" value="L&#xe4;gg till ny utrustning"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="lista">
+    <Component class="javax.swing.JComboBox" name="k">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">

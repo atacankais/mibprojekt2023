@@ -48,12 +48,12 @@ public class RaderaAlien extends javax.swing.JFrame {
 
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        aliennamn = new javax.swing.JTextField();
+        alienid = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel2.setText("Alien-Namn:");
+        jLabel2.setText("Alien-ID");
 
         jButton1.setText("OK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -62,9 +62,9 @@ public class RaderaAlien extends javax.swing.JFrame {
             }
         });
 
-        aliennamn.addActionListener(new java.awt.event.ActionListener() {
+        alienid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aliennamnActionPerformed(evt);
+                alienidActionPerformed(evt);
             }
         });
 
@@ -86,7 +86,7 @@ public class RaderaAlien extends javax.swing.JFrame {
                         .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton1)
-                            .addComponent(aliennamn, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(alienid, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(63, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -96,7 +96,7 @@ public class RaderaAlien extends javax.swing.JFrame {
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(aliennamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(alienid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(51, 51, 51)
                 .addComponent(jButton1)
@@ -110,20 +110,14 @@ public class RaderaAlien extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         
-      // 
-         try {
-          String AlienNAMN= aliennamn.getText();     
-        Boolean delete=false; 
      
-           
-             String deletealien= " DELETE FROM ALIEN WHERE NAMN= '"+AlienNAMN+"'"; //varibel
-            
-            delete=true;
-             if(delete=true ){ //vilkor
-                                   String complatedelete=idb.fetchSingle(deletealien); //använder varibeln ovan
+           try {
+            String delete = alienid.getText();
+            String tabort = "Delete from Alien where Alien_ID=" + delete + "";
+            idb.delete(tabort);
 
-                 System.out.println(" En alien har nu tagits bort från systemet"+ complatedelete);
-             }
+            JOptionPane.showMessageDialog(null, " Denna alien är borttagit");
+        
              
          } catch (InfException ex) { //om undantag kastas
              
@@ -173,9 +167,9 @@ public class RaderaAlien extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void aliennamnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aliennamnActionPerformed
+    private void alienidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alienidActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_aliennamnActionPerformed
+    }//GEN-LAST:event_alienidActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,7 +210,7 @@ public class RaderaAlien extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField aliennamn;
+    private javax.swing.JTextField alienid;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

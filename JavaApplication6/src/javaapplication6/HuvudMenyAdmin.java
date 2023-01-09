@@ -85,7 +85,7 @@ private InfDB idb;
         s.setVisible(true);
     }
     public void tabortagent(){
-        RaderaAgent system= new RaderaAgent();
+        TaBortAgent system= new TaBortAgent();
         system.setVisible(true);
     }
     

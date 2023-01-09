@@ -38,13 +38,13 @@ private static InfDB idb;
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        agentnamn = new javax.swing.JTextField();
+        agentid = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Ange namn för att radera en agent");
+        jLabel1.setText("Ange ID för att radera en agent");
 
         jButton1.setText("OK");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -64,7 +64,7 @@ private static InfDB idb;
                 .addContainerGap(106, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(agentnamn, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(agentid, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(145, 145, 145))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jButton1)
@@ -85,7 +85,7 @@ private static InfDB idb;
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(agentnamn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(agentid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(jButton1)
                 .addContainerGap(105, Short.MAX_VALUE))
@@ -95,17 +95,21 @@ private static InfDB idb;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      String agent = agentnamn.getText(); //hämtar text
+    
       try {
-            idb.delete("DELETE FROM Agent WHERE Namn = '" + agent + "'");
-              JOptionPane.showMessageDialog(null, "Agenten "+ agent+ "är borttagit");  
+            String delet = agentid.getText();
+            String tabort = "Delete from Agent where Agent_ID=" + delet + "";
+            idb.delete(tabort);
 
-      } 
-      catch(InfException e) {
-           JOptionPane.showMessageDialog(null, "Agenten finns inte");   //utskrift vid undatget därav catch
-           System.out.println("Nånting gick fel");
-          
-      }
+            JOptionPane.showMessageDialog(null, " Denna agent är borttagit");
+        
+             
+         } catch (InfException ex) { //om undantag kastas
+             
+            JOptionPane.showMessageDialog(null, "Någonting gick fel");
+             System.out.println(" Något gick fel, vänligen försök igen");
+         }
+         
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -146,7 +150,7 @@ private static InfDB idb;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField agentnamn;
+    private javax.swing.JTextField agentid;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
