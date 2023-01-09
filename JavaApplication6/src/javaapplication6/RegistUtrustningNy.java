@@ -42,6 +42,7 @@ private InfDB idb;
         utid = new javax.swing.JTextField();
         utben = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,26 +60,29 @@ private InfDB idb;
         jLabel3.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabel3.setText("Lägg till ny utrustning");
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Teknik", "Vapen", "Komunikation" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(111, 111, 111)
+                .addComponent(jLabel3)
+                .addContainerGap(293, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1))
-                        .addGap(61, 61, 61)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(ändra)
-                            .addComponent(utben, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
-                            .addComponent(utid)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(111, 111, 111)
-                        .addComponent(jLabel3)))
-                .addContainerGap(68, Short.MAX_VALUE))
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1))
+                .addGap(61, 61, 61)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ändra)
+                    .addComponent(utben, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+                    .addComponent(utid))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -88,7 +92,8 @@ private InfDB idb;
                 .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(utid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                    .addComponent(jLabel1)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(utben, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -104,6 +109,7 @@ private InfDB idb;
     private void ändraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ändraActionPerformed
             
         try { 
+            String lista=jComboBox1.getSelectedItem().toString();
               String Insert = "INSERT INTO Utrustning VALUES("
                  + utid.getText()+ ", '" //metoden ger tillgång till texten i rutan som går efter namnet utid
                  + utben.getText() + "')";
@@ -111,6 +117,39 @@ private InfDB idb;
               JOptionPane.showMessageDialog(null, "Ny utrustning registrerades");
              // idb.insert("INSERT INTO Utrustning(Utrustning_ID, Benamning) VALUES('"+id+"', '"+utnamn+"')");
 
+             
+             if (lista=="Teknik") {
+                String insertTeknik = "Insert into Teknik ( Utrustnings_ID) "
+                        + " values ( '"  + utid + ")";
+                idb.insert(insertTeknik);
+
+            }
+
+            if (lista=="Kommunikation") {
+                String insertKommunikation = "Insert into mibdb.Kommunikation (utrustnings_id) "
+                        + "values ( '"  + utid+ ")";
+                idb.insert(insertKommunikation);
+
+            }
+
+            if (lista=="Vapen") {
+                String insertVapen = "Insert into mibdb.Vapen (kaliber, utrustnings_id) "
+                        + "values ( '"  + utid+ ")";
+                idb.insert(insertVapen);
+
+            }
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
           } 
           catch(InfException e) { //om undtag kastas
            JOptionPane.showMessageDialog(null, "Registreringen gick inte igenom, pröva igen!");     
@@ -154,6 +193,7 @@ private InfDB idb;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

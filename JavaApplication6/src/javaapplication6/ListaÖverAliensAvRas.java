@@ -42,9 +42,11 @@ ArrayList avRas;
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        rastyp = new javax.swing.JComboBox<>();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -56,6 +58,8 @@ ArrayList avRas;
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
+
+        jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,6 +73,13 @@ ArrayList avRas;
             }
         });
 
+        rastyp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Boglodite", "Worm", "Squid" }));
+        rastyp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rastypActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -79,11 +90,13 @@ ArrayList avRas;
                         .addGap(124, 124, 124)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(152, 152, 152)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(164, 164, 164)
-                        .addComponent(jLabel2)))
+                        .addComponent(jLabel2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(152, 152, 152)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rastyp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1))))
                 .addContainerGap(136, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -91,34 +104,92 @@ ArrayList avRas;
             .addGroup(layout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addComponent(jLabel1)
-                .addGap(86, 86, 86)
+                .addGap(28, 28, 28)
+                .addComponent(rastyp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
                 .addComponent(jLabel2)
-                .addGap(41, 41, 41)
+                .addGap(85, 85, 85)
                 .addComponent(jButton1)
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-try {
+        String rass= rastyp.getSelectedItem().toString();
+        // String q= "SELECT namn FROM alien WHERE Alien_ID IN(SELECT Alien_ID FROM " + rass + ")";
+        //   avRas =idb.fetchColumn("SELECT Alien_ID from Squid join Worm on Squid.Alien_ID=Worm.Alien_ID join Boglodite on Boglodite.Alien_ID=Worm.Alien_ID  WHERE Alien_ID IN(SELECT Alien_ID FROM " + rass + ")+")";
+        // avRas=idb.fetchColumn(q);
+        //  avRas =idb.fetchColumn("SELECT Alien_ID from Squid join Worm on Squid.Alien_ID=Worm.Alien_ID join Boglodite on Boglodite.Alien_ID=Worm.Alien_ID where = '" +ras+ "'");
+     //   JOptionPane.showMessageDialog(null,"Aliens av denna ras: " + "");
         
+   
+
+     
+
+     
+           try {
+             
+     
+       if(rass.equals("Boglodite")){
+      
+                avRas= idb.fetchRows("Select Alien_ID from Boglodite");
+                  JOptionPane.showMessageDialog(null,"Aliens av denna ras: " +avRas+"");
+               
+            } 
+                
+  if(rass.equals("Squid")){
         
-        String ras =jTextField1.getText();
-            
-        avRas =idb.fetchColumn("SELECT Alien_ID from Squid join Worm on Squid.Alien_ID=Worm.Alien_ID join Boglodite on Boglodite.Alien_ID=Worm.Alien_ID where = '" +ras+ "'");
-
-          JOptionPane.showMessageDialog(null,"Aliens av denna ras: "+ + "");
-    } catch (InfException ex) {
-        JOptionPane.showMessageDialog(null, "Inga alien hittades, eventuellt fel områdes id, försök igen!");
-        Logger.getLogger(Listaöveraliensombefinnersigiangivenplats.class.getName()).log(Level.SEVERE, null, ex);
-    }
+                avRas= idb.fetchRows("Select  Alien_ID from Squid");
+               
+                JOptionPane.showMessageDialog(null,"Aliens av denna ras: " +avRas+"");
+            } 
+  
+  if(rass.equals("Worm")){
         
+                avRas= idb.fetchRows("Select Alien_ID from Worm");
+                  JOptionPane.showMessageDialog(null,"Aliens av denna ras: " +avRas+"");
+            } 
+  
+  
+  
+  
+  
+           }
+           
+           
+           
+  catch (InfException ex) {
+                Logger.getLogger(ListaÖverAliensAvRas.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
-
-
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void rastypActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rastypActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rastypActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,5 +231,7 @@ try {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JComboBox<String> rastyp;
     // End of variables declaration//GEN-END:variables
 }
