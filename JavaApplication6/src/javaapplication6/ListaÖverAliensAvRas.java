@@ -150,6 +150,8 @@ ArrayList avRas;
         
                 avRas= idb.fetchRows("Select Alien_ID from Worm");
                   JOptionPane.showMessageDialog(null,"Aliens av denna ras: " +avRas+"");
+                  
+                  System.out.println(avRas);
             } 
   
   
