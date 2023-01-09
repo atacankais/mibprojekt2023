@@ -66,7 +66,7 @@ private InfDB idb;
         jLabel3.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabel3.setText("Lägg till ny utrustning");
 
-        lista.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Teknik", "Vapen", "Komunikation" }));
+        lista.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Teknik", "Vapen", "Kommunikation" }));
 
         jLabel4.setText("Vapen kaliber:");
 
@@ -181,18 +181,7 @@ private InfDB idb;
                  + vkal.getText() + "')";
                 idb.insert(insertKommunikation);
 
-            }
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
+            } 
              
           } 
           catch(InfException e) { //om undtag kastas
