@@ -114,6 +114,9 @@ public class RaderaAlien extends javax.swing.JFrame {
            try {
             String delete = alienid.getText();
             String tabort = "Delete from Alien where Alien_ID=" + delete + "";
+            idb.delete("DELETE FROM Squid WHERE Alien_ID ="+ delete);
+            idb.delete("DELETE FROM Worm WHERE Alien_ID ="+delete);
+            idb.delete("DELETE FROM Boglodite WHERE Alien_ID ="+ delete);
             idb.delete(tabort);
 
             JOptionPane.showMessageDialog(null, " Denna alien är borttagit");
