@@ -51,7 +51,7 @@ ArrayList namnpåalien;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Platsen:");
+        jLabel1.setText("Plats namn:");
 
         ortnamn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

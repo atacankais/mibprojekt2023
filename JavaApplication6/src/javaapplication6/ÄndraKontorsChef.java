@@ -116,6 +116,7 @@ private static InfDB idb;
         var nychef = nykchef.getText();
         
        idb.update("UPDATE kontorschef SET Agent_ID = '" + nychef + "' WHERE Kontorsbeteckning = '"+ nykontor +"'");
+       JOptionPane.showMessageDialog(null, "  Du har ändrat kontorschef. ");
 
         }
         catch(Exception e) { //catch och try för undantag 

@@ -294,15 +294,6 @@ public class Registreraenalienisystemet extends javax.swing.JFrame {
                 idb.insert(insertsquid);
                    JOptionPane.showMessageDialog(null, " Du har registererat en alien i systemet med id  "+ nextId);
             
-            
-            
-            
-            
-            
-            
-            
-            
-             JOptionPane.showMessageDialog(null, " Du har registererat en alien i systemet med id  "+ nextId);
          }
          else if(box==("Worm") ){
              idb.insert("INSERT INTO Alien VALUES('" + nextId + "','" + Date +"','" + Losenordet +"','" + namn +"','" + telefonummer +"','" + platsen + "','" + Ansvarigagent +"')");

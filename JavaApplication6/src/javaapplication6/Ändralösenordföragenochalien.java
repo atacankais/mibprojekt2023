@@ -201,10 +201,8 @@ private static InfDB idb;
              if( findoldpasswordforalien=true && Valideringen.losennord(newpasscode))
               try {
              
-             
+            
              idb.update("UPDATE alien SET losenord = " + "'" + newpasscode + "'" + " WHERE losenord = " + "'" + oldpasscode + "'");
-                           System.out.println(" Lösenordet har ändrats!");
-                            JOptionPane.showMessageDialog(null, " Ditt nya lösenord är "+newpasscode);
                             } 
                             catch (InfException ettUndantag) {
                                 JOptionPane.showMessageDialog(null, "Någnting gick fel");

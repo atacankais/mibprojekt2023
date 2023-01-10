@@ -101,7 +101,7 @@ private static InfDB idb;
 
         }
         catch(InfException e) {
-           JOptionPane.showMessageDialog(null, "Någnting gick fel");   //undatag kastas, detta skrivs ut för användaren
+           JOptionPane.showMessageDialog(null, "Nånting gick fel");   //undatag kastas, detta skrivs ut för användaren
            System.out.println("Nånting gick fel");
         }
         

@@ -203,6 +203,7 @@ public class AdminÄndraAllAlienInfo extends javax.swing.JFrame {
 
         
        idb.update("UPDATE alien SET Alien_ID = '" + nyaid + "', Registreringsdatum = '" + nyaregdatum + "', Losenord = '" + nyalösenord + "', Namn = '" + nyanamn + "', Telefon = '" + nyatelefon + "', Plats = '" + nyaplats + "', Ansvarig_Agent = '" + nyaansvarig + "' WHERE Alien_Id = '"+ ändraAlienId +"'");
+       JOptionPane.showMessageDialog(null, " Du har ändrat alien information.");
 
         }
         catch(InfException e) {      //catch nödvändig då den hanterar undantag

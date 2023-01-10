@@ -164,7 +164,9 @@ public class ÄndraAgentInformation extends javax.swing.JFrame {
         var d= anställningsdatum.getText();
         try {
             
-            idb.update("UPDATE agent SET Namn = '" + nyttnamn + "', Omrade = '" + nyttomr + "', Telefon = '" + nyatel + "' , Anstallningsdatum='" + d + "'  WHERE Agent_ID = '"+ agentid +"'");     
+            idb.update("UPDATE agent SET Namn = '" + nyttnamn + "', Omrade = '" + nyttomr + "', Telefon = '" + nyatel + "' , Anstallningsdatum='" + d + "'  WHERE Agent_ID = '"+ agentid +"'"); 
+            JOptionPane.showMessageDialog(null, " Agent ändrad. ");
+
         } 
 
         catch(InfException e) {

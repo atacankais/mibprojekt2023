@@ -117,6 +117,7 @@ private static InfDB idb;
         var agid = agentid.getText();
         
        idb.update("UPDATE omradeschef SET Agent_ID = '" + agid + "' WHERE Omrade = '"+ omradeid +"'"); 
+       JOptionPane.showMessageDialog(null, "  Du har ändrat områdeschef. ");
 
         }
         catch(Exception e) {
