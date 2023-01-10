@@ -150,32 +150,35 @@ private InfDB idb;
     private void ändraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ändraActionPerformed
             
         try { 
-            String lista=k.getSelectedItem().toString();
-              String Insert = "INSERT INTO Utrustning VALUES("
+            String listaa=k.getSelectedItem().toString();
+            
+            String Insert = "INSERT INTO Utrustning VALUES("
                  + utid.getText()+ ", '" //metoden ger tillgång till texten i rutan som går efter namnet utid
                  + utben.getText() + "')";
               idb.insert(Insert);
               JOptionPane.showMessageDialog(null, "Ny utrustning registrerades");
-             // idb.insert("INSERT INTO Utrustning(Utrustning_ID, Benamning) VALUES('"+id+"', '"+utnamn+"')");
 
              
-             if (lista=="Teknik") {
-                String insertTeknik = "Insert into Teknik ( Utrustnings_ID) "
-                        + " values ( '"  + utid + ")";
+             if (listaa=="Teknik") {
+                String insertTeknik = "INSERT INTO Teknik VALUES("
+                 + utid.getText()+ ", '" //metoden ger tillgång till texten i rutan som går efter namnet utid
+                 + tkraft.getText() + "')";
                 idb.insert(insertTeknik);
 
             }
 
-            if (lista=="Kommunikation") {
-                String insertKommunikation = "Insert into Kommunikation (utrustnings_id) "
-                        + "values ( '"  + utid+ ")";
+            if (listaa=="Kommunikation") {
+                String insertKommunikation = "INSERT INTO Kommunikation VALUES("
+                 + utid.getText()+ ", '" //metoden ger tillgång till texten i rutan som går efter namnet utid
+                 + kover.getText() + "')";
                 idb.insert(insertKommunikation);
 
             }
 
-            if (lista=="Vapen") {
-                String insertVapen = "Insert into mibdb.Vapen (utrustnings_id) "
-                        + "values ( '"  + utid+ ")";
+            if (listaa=="Vapen") {
+                String insertVapen = "INSERT INTO Vapen VALUES("
+                 + utid.getText()+ ", '" //metoden ger tillgång till texten i rutan som går efter namnet utid
+                 + vkal.getText() + "')";
                 idb.insert(insertVapen);
 
             }
