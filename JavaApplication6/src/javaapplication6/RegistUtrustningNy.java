@@ -183,17 +183,7 @@ private InfDB idb;
 
             }
              
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
-             
+                       
           } 
           catch(InfException e) { //om undtag kastas
            JOptionPane.showMessageDialog(null, "Registreringen gick inte igenom, pröva igen!");     

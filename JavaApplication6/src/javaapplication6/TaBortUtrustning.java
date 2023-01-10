@@ -113,7 +113,8 @@ private static InfDB idb;
        idb.delete("DELETE FROM Vapen WHERE Utrustnings_ID = " + utid);
        idb.delete("DELETE FROM Kommunikation WHERE Utrustnings_ID = " + utid);
        idb.delete(tabort);
-       
+       JOptionPane.showMessageDialog(null, "Utrustning borttaget");
+
         }
         catch(InfException e) {
             JOptionPane.showMessageDialog(null, "Utrustningen finns inte");   //undantag kastas
