@@ -46,10 +46,7 @@ private InfDB idb;
         k.setVisible(true);
     }
     
-    public void oppnaalienreg(){
-        Reggaalien r= new Reggaalien ();
-        r.setVisible(true);
-        }
+    
     public void oppnatabortalien(){
         RaderaAlien da= new RaderaAlien();
         da.setVisible(true);

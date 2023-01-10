@@ -6,7 +6,6 @@ package javaapplication6;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import static javaapplication6.Reggaalien.idb;
 import javax.swing.JOptionPane;
 import oru.inf.InfDB;
 import oru.inf.InfException;

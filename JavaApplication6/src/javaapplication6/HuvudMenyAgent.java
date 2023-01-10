@@ -47,7 +47,6 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        nyalien = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
@@ -60,13 +59,6 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        nyalien.setText("Registrera ny alien utan ras");
-        nyalien.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nyalienActionPerformed(evt);
-            }
-        });
 
         jButton2.setText("Ändra alieninformation");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -145,7 +137,6 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(nyalien, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -181,9 +172,7 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
                     .addComponent(jButton6)
                     .addComponent(jButton5))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nyalien)
-                    .addComponent(jButton4))
+                .addComponent(jButton4)
                 .addContainerGap(66, Short.MAX_VALUE))
         );
 
@@ -207,11 +196,7 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
     }
             
             
-            private void reggaNyAlien(){
-        Reggaalien R = new Reggaalien();
-        R.setVisible(true);
-    }
-    
+            
     private void Reistereraenalienisystemettt(){
         Registreraenalienisystemet alienn = new Registreraenalienisystemet();
           alienn.setVisible(true);
@@ -241,13 +226,7 @@ public class HuvudMenyAgent extends javax.swing.JFrame {
         c.setVisible(true);
     }
    
-    
-    
-    
-    private void nyalienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nyalienActionPerformed
-        reggaNyAlien();
-    }//GEN-LAST:event_nyalienActionPerformed
-
+   
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
 
         
@@ -344,6 +323,5 @@ listaRas();   // TODO add your handling code here:
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton nyalien;
     // End of variables declaration//GEN-END:variables
 }
